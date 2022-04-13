@@ -12,9 +12,8 @@
 7. Navigate to the package manager and remove and the re-install the "OpenXR Plugin." Make sure it is reinstalled as version 1.3.1
 8. Search for "OVRPlugin" in the project manager and open it in your code editor
 9. Find the following lines and cut/paste them to line 38 below "public static partial class OVRPlugin": <br/>
-<code>private const string pluginName = "OVRPlugin"; <br/>
-private static System.Version _versionZero = new System.Version(0, 0, 0);
-</code> <br/>
+`private const string pluginName = "OVRPlugin";` <br/>
+`private static System.Version _versionZero = new System.Version(0, 0, 0);`<br/>
 
 10. Save and exit the script
 11. Navigate to the following scenes, click on the "OVRCameraRig" object, scroll down to "Quest Features," and change "Hand Tracking Support" to "Controllers and Hands"
