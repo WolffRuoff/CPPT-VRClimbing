@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/EthanTestScenes/MainTestScene.unity
-    guid: 56e3e24127e53564c869dccc3fefdaf8
+    path: Assets/Scenes/ArnaviScenes/CalibrationScene.unity
+    guid: eca3c27a36f944d87b80879681ebbc72
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 0507b786032fb73498e631f10811336d, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: e4476a6a290af084085c80b1297fd105, type: 2}
