@@ -24,33 +24,50 @@ namespace Oculus.Interaction
 
         private IGrabbable _grabbable;
         private Pose _previousGrabPose;
+        private Vector3 _initialCameraSpace;
+        private GameObject initialParent;
+        private GameObject lHand;
+        private GameObject rHand;
+
 
         public void Initialize(IGrabbable grabbable)
         {
             _grabbable = grabbable;
+            lHand = GameObject.FindGameObjectWithTag("LHandAnchor");
+            rHand = GameObject.FindGameObjectWithTag("RHandAnchor");
+            initialParent = lHand.transform.parent.gameObject;
         }
 
         public void BeginTransform()
         {
             Pose grabPoint = _grabbable.GrabPoints[0];
             _previousGrabPose = grabPoint;
+            _initialCameraSpace = GameObject.FindGameObjectWithTag("Player").transform.position;
+            lHand.transform.SetParent(null);
+            rHand.transform.SetParent(null);
+
+
         }
 
         public void UpdateTransform()
         {
+            Debug.Log("woohoo");
             Pose grabPoint = _grabbable.GrabPoints[0];
             var targetTransform = _grabbable.Transform;
 
             Vector3 worldOffsetFromGrab = targetTransform.position - _previousGrabPose.position;
-            Vector3 offsetInGrabSpace = Quaternion.Inverse(_previousGrabPose.rotation) * worldOffsetFromGrab;
+            //Vector3 offsetInGrabSpace = Quaternion.Inverse(_previousGrabPose.rotation) * worldOffsetFromGrab;
             //Quaternion rotationInGrabSpace = Quaternion.Inverse(_previousGrabPose.rotation) * targetTransform.rotation;
 
-            targetTransform.position = (grabPoint.rotation * offsetInGrabSpace) + grabPoint.position;
+            GameObject.FindGameObjectWithTag("Player").transform.position = _initialCameraSpace + worldOffsetFromGrab;
             //targetTransform.rotation = grabPoint.rotation * rotationInGrabSpace;
 
             _previousGrabPose = grabPoint;
         }
 
-        public void EndTransform() { }
+        public void EndTransform() {
+            lHand.transform.SetParent(initialParent.transform);
+            rHand.transform.SetParent(initialParent.transform);
+        }
     }
 }
