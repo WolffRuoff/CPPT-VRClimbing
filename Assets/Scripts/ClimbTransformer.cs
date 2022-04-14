@@ -23,25 +23,23 @@ namespace Oculus.Interaction
     {
 
         private IGrabbable _grabbable;
-        private Pose _previousGrabPose;
-        private Vector3 _initialCameraSpace;
         private GameObject lHand;
         private GameObject rHand;
         private GameObject currentHand;
         private Vector3 initialHandPos;
+        private GameObject player;
 
         public void Initialize(IGrabbable grabbable)
         {
             _grabbable = grabbable;
             lHand = GameObject.FindGameObjectWithTag("LHandAnchor");
             rHand = GameObject.FindGameObjectWithTag("RHandAnchor");
+            player = GameObject.FindGameObjectWithTag("Player");
         }
 
         public void BeginTransform()
         {
-            Pose grabPoint = _grabbable.GrabPoints[0];
-            _previousGrabPose = grabPoint;
-            _initialCameraSpace = GameObject.FindGameObjectWithTag("Player").transform.position;
+            //_initialCameraSpace = GameObject.FindGameObjectWithTag("Player").transform.position;
 
             currentHand = GetNearestHand();
             initialHandPos = currentHand.transform.position;
@@ -52,30 +50,22 @@ namespace Oculus.Interaction
         public void UpdateTransform()
         {
             //Debug.Log("woohoo");
-            Pose grabPoint = _grabbable.GrabPoints[0];
             var targetTransform = _grabbable.Transform;
 
-            Vector3 worldOffsetFromGrab = targetTransform.position - currentHand.transform.position;
-            Debug.Log("Currentoffset = " + worldOffsetFromGrab);
-            //Vector3 offsetInGrabSpace = Quaternion.Inverse(_previousGrabPose.rotation) * worldOffsetFromGrab;
-            //Quaternion rotationInGrabSpace = Quaternion.Inverse(_previousGrabPose.rotation) * targetTransform.rotation;
+            Vector3 worldOffsetFromGrab = initialHandPos - currentHand.transform.position;
 
-            GameObject.FindGameObjectWithTag("Player").transform.position += worldOffsetFromGrab;
+            player.transform.position += worldOffsetFromGrab;
             currentHand.transform.position = initialHandPos;
-            //currentHand
-            //targetTransform.rotation = grabPoint.rotation * rotationInGrabSpace;
-
-            _previousGrabPose = grabPoint;
         }
 
         public void EndTransform() {
+            currentHand = null;
         }
 
         private GameObject GetNearestHand()
         {
-            // TODO Verify lHand and rHand are correct
             float distFromLHand = Vector3.Distance(lHand.transform.position, _grabbable.Transform.position);
-            float distFromRHand = Vector3.Distance(lHand.transform.position, _grabbable.Transform.position);
+            float distFromRHand = Vector3.Distance(rHand.transform.position, _grabbable.Transform.position);
 
             if (distFromLHand < distFromRHand)
             {
