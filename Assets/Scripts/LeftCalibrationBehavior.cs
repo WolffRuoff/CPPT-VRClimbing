@@ -8,10 +8,14 @@ public class LeftCalibrationBehavior : MonoBehaviour
     public GameObject hand;
 
     public void OnSelect() {
-        GlobalBehavior.leftSpawnPos = hand.transform.position;
+        if (GlobalBehavior.calibrationMode) {
+            GlobalBehavior.leftSpawnPos = hand.transform.position;
+        }
     }
 
     public void OnDeselect() {
-        Instantiate(cubeToSpawn, GlobalBehavior.leftSpawnPos, Quaternion.identity);
+        if (GlobalBehavior.calibrationMode) {
+            Instantiate(cubeToSpawn, GlobalBehavior.leftSpawnPos, Quaternion.identity);
+        }
     }
 }
