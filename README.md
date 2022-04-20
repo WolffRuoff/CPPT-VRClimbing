@@ -1,5 +1,19 @@
 # CPPT-VRClimbing
+Created by Ethan Ruoff (er3074), Namratha Prithviraj (np2788), Arnavi Chheda (amc2476), and Drew Sirenko (ays2130)  <br/>
+Video URL: _______ <br/>
+Date of Submission: _______ <br/>
 
+## Development Platforms: 
+- Unity 2020.3.33f1
+- Oculus Integration Package v38.0
+- OpenXR 1.3.1
+- Terrain Tools 3.0.2-Preview.3
+
+## Compatible Devices:
+- Oculus Quest v______
+- Oculus Quest 2 v______
+
+## Directory Overview
 ## Instructions for setting up the project
 1. Install the Unity editor 2020.3.33f1
 2. Add this repo as a project in the Unity Hub
@@ -19,3 +33,11 @@
 11. Navigate to the following scenes, click on the "OVRCameraRig" object, scroll down to "Quest Features," and change "Hand Tracking Support" to "Controllers and Hands"
     - Scenes that require step 8:
         - MainTestScene
+
+## Missing Features
+
+## Known Bugs
+
+## Asset Sources
+- Knobs used as handgrips: https://drive.google.com/file/d/1gwLXOBAx5IqPFIDcJJIyJSVAgR9GifKX/view
+- Textures for the terrain were provided by Unity
