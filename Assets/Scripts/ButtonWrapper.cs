@@ -71,7 +71,7 @@ public class ButtonWrapper : MonoBehaviour
 
     public void Selecting(float controller)
     {
-        // if (GlobalBehavior.calibrationMode) {
+        if (GlobalBehavior.calibrationMode) {
             if (controller == 1 && !GlobalBehavior.rightHandCalibrationSet) {
                 GlobalBehavior.rightSpawnPos = rightHand.transform.position;
                 GlobalBehavior.rightHandCalibrationSet = true;
@@ -85,7 +85,7 @@ public class ButtonWrapper : MonoBehaviour
                 GlobalBehavior.calibrationMode = false;
                 GlobalBehavior.calibrationFinished = true;
             }
-        // }
+        }
     }
 
     public void UnSelect(float controller)

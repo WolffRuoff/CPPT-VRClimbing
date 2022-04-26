@@ -9,7 +9,7 @@ public class StartCalibrationButton : MonoBehaviour
     public void OnButtonClick() {
         if (GlobalBehavior.calibrationMode == false) {
             GlobalBehavior.calibrationMode = true;
-            button.SetActive(false);
         }
+        button.SetActive(false);
     }
 }
