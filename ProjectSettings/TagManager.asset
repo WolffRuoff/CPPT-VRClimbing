@@ -6,6 +6,7 @@ TagManager:
   tags:
   - RHandAnchor
   - LHandAnchor
+  - CalibrationCube
   layers:
   - Default
   - TransparentFX

@@ -12,4 +12,6 @@ public class GlobalBehavior : MonoBehaviour
 
     public static bool leftHandCalibrationSet = false;
     public static Vector3 leftSpawnPos;
+
+    public static bool wallActive = false;
 }
