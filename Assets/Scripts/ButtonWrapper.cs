@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class ButtonWrapper : MonoBehaviour
 {
+
+    public GameObject leftHand;
+    public GameObject rightHand;
+    public GameObject cubeToSpawn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -66,8 +71,21 @@ public class ButtonWrapper : MonoBehaviour
 
     public void Selecting(float controller)
     {
-        //0 is left hand, 1 is right hand, 2 is left controller, 3 is right controller
-        Debug.Log("Selecting with " + controller);
+        if (GlobalBehavior.calibrationMode) {
+            if (controller == 1 && !GlobalBehavior.rightHandCalibrationSet) {
+                GlobalBehavior.rightSpawnPos = rightHand.transform.position;
+                GlobalBehavior.rightHandCalibrationSet = true;
+                Instantiate(cubeToSpawn, GlobalBehavior.rightSpawnPos, Quaternion.identity);
+            } else if (controller == 0 && !GlobalBehavior.leftHandCalibrationSet) {
+                GlobalBehavior.leftSpawnPos = leftHand.transform.position;
+                GlobalBehavior.leftHandCalibrationSet = true;
+                Instantiate(cubeToSpawn, GlobalBehavior.leftSpawnPos, Quaternion.identity);
+            }
+            if (GlobalBehavior.rightHandCalibrationSet && GlobalBehavior.leftHandCalibrationSet) {
+                GlobalBehavior.calibrationMode = false;
+                GlobalBehavior.calibrationFinished = true;
+            }
+        }
     }
 
     public void UnSelect(float controller)
