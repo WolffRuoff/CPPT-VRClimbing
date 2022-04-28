@@ -28,6 +28,7 @@ namespace Oculus.Interaction
         private GameObject currentHand;
         private Vector3 initialHandPos;
         private GameObject player;
+        private bool grabbing;
 
         public void Initialize(IGrabbable grabbable)
         {
@@ -43,23 +44,31 @@ namespace Oculus.Interaction
 
             currentHand = GetNearestHand();
             initialHandPos = currentHand.transform.position;
-
+            foreach (ClimbTransformer climb in FindObjectsOfType<ClimbTransformer>()) {
+                if (!climb.gameObject.name.Equals(gameObject.name))
+                {
+                    Debug.Log(climb.gameObject.name);
+                    climb.EndTransform();
+                }
+            }
+            grabbing = true;
 
         }
 
         public void UpdateTransform()
         {
-            //Debug.Log("woohoo");
-            var targetTransform = _grabbable.Transform;
+            if (grabbing)
+            {
+                Vector3 worldOffsetFromGrab = initialHandPos - currentHand.transform.position;
 
-            Vector3 worldOffsetFromGrab = initialHandPos - currentHand.transform.position;
-
-            player.transform.position += worldOffsetFromGrab;
-            currentHand.transform.position = initialHandPos;
+                player.transform.position += worldOffsetFromGrab;
+                currentHand.transform.position = initialHandPos;
+            }
         }
 
         public void EndTransform() {
             currentHand = null;
+            grabbing = false;
         }
 
         private GameObject GetNearestHand()
