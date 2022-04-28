@@ -43,8 +43,57 @@ namespace Oculus.Interaction
 
             currentHand = GetNearestHand();
             initialHandPos = currentHand.transform.position;
+            Destroy(this.gameObject.GetComponent<Outline>());
 
+            switch(_grabbable.Transform.gameObject.name) {
+                case "1":
+                    var outline2 = GameObject.Find("2").AddComponent<Outline>();
 
+                    outline2.OutlineMode = Outline.Mode.OutlineAll;
+                    outline2.OutlineColor = Color.yellow;
+                    outline2.OutlineWidth = 5f;
+                    break;
+                case "2":
+                    var outline3 = GameObject.Find("3").AddComponent<Outline>();
+
+                    outline3.OutlineMode = Outline.Mode.OutlineAll;
+                    outline3.OutlineColor = Color.yellow;
+                    outline3.OutlineWidth = 5f;
+                    break;
+                case "3":
+                    var outline4 = GameObject.Find("4").AddComponent<Outline>();
+
+                    outline4.OutlineMode = Outline.Mode.OutlineAll;
+                    outline4.OutlineColor = Color.yellow;
+                    outline4.OutlineWidth = 5f;
+                    break;
+                case "4":
+                    var outline5 = GameObject.Find("5").AddComponent<Outline>();
+
+                    outline5.OutlineMode = Outline.Mode.OutlineAll;
+                    outline5.OutlineColor = Color.yellow;
+                    outline5.OutlineWidth = 5f;
+                    break;
+                case "5":
+                    var outline6 = GameObject.Find("6").AddComponent<Outline>();
+
+                    outline6.OutlineMode = Outline.Mode.OutlineAll;
+                    outline6.OutlineColor = Color.yellow;
+                    outline6.OutlineWidth = 5f;
+                    break;
+                case "6":
+                    var outline7 = GameObject.Find("7").AddComponent<Outline>();
+
+                    outline7.OutlineMode = Outline.Mode.OutlineAll;
+                    outline7.OutlineColor = Color.yellow;
+                    outline7.OutlineWidth = 5f;
+                    break;
+                default:
+                    break;
+            }
+            // if (this.gameObject.name == "3") {
+            //     _grabbable.Transform.gameObject.GetComponent<Renderer>().material.color = Color.red;
+            // }
         }
 
         public void UpdateTransform()
