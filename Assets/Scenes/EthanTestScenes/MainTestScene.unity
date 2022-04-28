@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.22571336, b: 0.3069219, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -412,28 +412,6 @@ PrefabInstance:
     - {fileID: 4799643296730111408, guid: 2c9521a26612f6948a6c6f60aa59c962, type: 3}
     - {fileID: 4799643296952646330, guid: 2c9521a26612f6948a6c6f60aa59c962, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2c9521a26612f6948a6c6f60aa59c962, type: 3}
---- !u!114 &1179521520 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1593180640736784017, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
-  m_PrefabInstance: {fileID: 2978228717185590320}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6f9440d09721c849864899e8986e219, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1179521522 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1593180640736784020, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
-  m_PrefabInstance: {fileID: 2978228717185590320}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 08f7cfb1f9629da4494ac0840f3a3cfd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1196685209
 GameObject:
   m_ObjectHideFlags: 0
@@ -570,7 +548,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86fda5ce347f35d44a5c6faee65c6679, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _shapeRecognizerActiveState: {fileID: 1179521522}
+  _shapeRecognizerActiveState: {fileID: 0}
   _fingerFeatureDebugVisualPrefab: {fileID: 9164247537266964908, guid: 072f28eaf071f834e82a66e5843572c9, type: 3}
 --- !u!1001 &1231773866
 PrefabInstance:
@@ -634,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 4657395398433734876, guid: 5f611a36d70d46a4ba7f1233f9c4444e, type: 3}
       propertyPath: _transformRecognizerActiveState
       value: 
-      objectReference: {fileID: 1179521520}
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f611a36d70d46a4ba7f1233f9c4444e, type: 3}
 --- !u!4 &1354355564 stripped
@@ -939,6 +917,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 816240491315999149, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7231824828490529138, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
       propertyPath: m_RootOrder
       value: 5
