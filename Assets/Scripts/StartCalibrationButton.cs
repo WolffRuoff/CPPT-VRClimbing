@@ -10,6 +10,6 @@ public class StartCalibrationButton : MonoBehaviour
         if (GlobalBehavior.calibrationMode == false) {
             GlobalBehavior.calibrationMode = true;
         }
-        button.SetActive(false);
+        button.transform.parent.gameObject.SetActive(false);
     }
 }
