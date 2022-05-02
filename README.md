@@ -41,3 +41,5 @@ Date of Submission: _______ <br/>
 ## Asset Sources
 - Knobs used as handgrips: https://drive.google.com/file/d/1gwLXOBAx5IqPFIDcJJIyJSVAgR9GifKX/view
 - Textures for the terrain were provided by Unity
+- Quick Outline
+- Augmented Reality is done via the LIV SDK
