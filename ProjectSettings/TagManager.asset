@@ -9,6 +9,7 @@ TagManager:
   - CalibrationCube
   - HandLaser
   - GrabInteractor
+  - RayInteractor
   layers:
   - Default
   - TransparentFX
