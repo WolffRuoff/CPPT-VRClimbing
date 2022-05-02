@@ -14,4 +14,8 @@ public class GlobalBehavior : MonoBehaviour
     public static Vector3 leftSpawnPos;
 
     public static bool wallActive = false;
+
+    public static bool gameStarted = false;
+
+    public static int rotateLevel = 0;
 }
