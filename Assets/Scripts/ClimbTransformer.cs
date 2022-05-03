@@ -10,6 +10,7 @@ ANY KIND, either express or implied. See the License for the specific language g
 permissions and limitations under the License.
 ************************************************************************************/
 
+using Oculus.Interaction.Grab;
 using UnityEngine;
 
 namespace Oculus.Interaction
@@ -39,19 +40,12 @@ namespace Oculus.Interaction
 
         public void BeginTransform()
         {
-            //_initialCameraSpace = GameObject.FindGameObjectWithTag("Player").transform.position;
-
-            currentHand = GetNearestHand();
+            SetGrabbingHand();
             initialHandPos = currentHand.transform.position;
-
-
         }
 
         public void UpdateTransform()
         {
-            //Debug.Log("woohoo");
-            var targetTransform = _grabbable.Transform;
-
             Vector3 worldOffsetFromGrab = initialHandPos - currentHand.transform.position;
 
             player.transform.position += worldOffsetFromGrab;
@@ -59,21 +53,27 @@ namespace Oculus.Interaction
         }
 
         public void EndTransform() {
-            currentHand = null;
         }
 
-        private GameObject GetNearestHand()
+        private void SetGrabbingHand()
         {
-            float distFromLHand = Vector3.Distance(lHand.transform.position, _grabbable.Transform.position);
-            float distFromRHand = Vector3.Distance(rHand.transform.position, _grabbable.Transform.position);
-
-            if (distFromLHand < distFromRHand)
+            foreach (GameObject hand in GameObject.FindGameObjectsWithTag("GrabInteractor"))
             {
-                return lHand;
-            }
-            else
-            {
-                return rHand;
+                if (hand.GetComponent<IHandGrabInteractor>().HandGrabApi.transform.GetPose().Equals(_grabbable.GrabPoints[0])) {
+                    if (hand.name.Contains("Left"))
+                    {
+                        currentHand = lHand;
+                    }
+                    else
+                    {
+                        currentHand = rHand;
+                    }
+                }
+                else
+                {
+                    Debug.Log("Unselecting " + hand.name);
+                    hand.GetComponent<IInteractor>().Unselect();
+                }
             }
         }
     }
