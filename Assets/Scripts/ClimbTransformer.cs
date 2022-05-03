@@ -50,270 +50,315 @@ namespace Oculus.Interaction
             // TODO: clean up switch statement section below (added for wayfinding)
             switch(_grabbable.Transform.gameObject.name) {
                 case "E1":
-                    outline = GameObject.Find("E2").AddComponent<Outline>();
+                    if (GameObject.Find("E2").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E2").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E2":
-                    outline = GameObject.Find("E3").AddComponent<Outline>();
+                    if (GameObject.Find("E3").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E3").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E3":
-                    outline = GameObject.Find("E4").AddComponent<Outline>();
+                    if (GameObject.Find("E4").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E4").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E4":
-                    outline = GameObject.Find("E5").AddComponent<Outline>();
+                    if (GameObject.Find("E5").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E5").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E5":
-                    outline = GameObject.Find("E6").AddComponent<Outline>();
+                    if (GameObject.Find("E6").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E6").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E6":
-                    outline = GameObject.Find("E7").AddComponent<Outline>();
+                    if (GameObject.Find("E7").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E7").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E7":
-                    outline = GameObject.Find("E8").AddComponent<Outline>();
+                    if (GameObject.Find("E8").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E8").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E8":
-                    outline = GameObject.Find("E9").AddComponent<Outline>();
+                    if (GameObject.Find("E9").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E9").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E9":
-                    outline = GameObject.Find("E10").AddComponent<Outline>();
+                    if (GameObject.Find("E10").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E10").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E10":
-                    outline = GameObject.Find("E11").AddComponent<Outline>();
+                    if (GameObject.Find("E11").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E11").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E11":
-                    outline = GameObject.Find("E12").AddComponent<Outline>();
+                    if (GameObject.Find("E12").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E12").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E12":
-                    outline = GameObject.Find("E13").AddComponent<Outline>();
+                    if (GameObject.Find("E13").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E13").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E13":
-                    outline = GameObject.Find("E14").AddComponent<Outline>();
+                    if (GameObject.Find("E14").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E14").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E14":
-                    outline = GameObject.Find("E15").AddComponent<Outline>();
+                    if (GameObject.Find("E15").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E15").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "E15":
-                    outline = GameObject.Find("E16").AddComponent<Outline>();
+                    if (GameObject.Find("E16").GetComponent<Outline>() == null)
+                    {
+                        outline = GameObject.Find("E16").AddComponent<Outline>();
 
-                    outline.OutlineMode = Outline.Mode.OutlineAll;
-                    outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                        outline.OutlineMode = Outline.Mode.OutlineAll;
+                        outline.OutlineColor = Color.yellow;
+                        outline.OutlineWidth = 10f;
+                    }
                     break;
                 case "M1":
                     outline = GameObject.Find("M2").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M2":
                     outline = GameObject.Find("M3").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M3":
                     outline = GameObject.Find("M4").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M4":
                     outline = GameObject.Find("M5").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M5":
                     outline = GameObject.Find("M6").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M6":
                     outline = GameObject.Find("M7").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M7":
                     outline = GameObject.Find("M8").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M8":
                     outline = GameObject.Find("M9").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M9":
                     outline = GameObject.Find("M10").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M10":
                     outline = GameObject.Find("M11").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M11":
                     outline = GameObject.Find("M12").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M12":
                     outline = GameObject.Find("M13").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "M13":
                     outline = GameObject.Find("M14").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H1":
                     outline = GameObject.Find("H2").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H2":
                     outline = GameObject.Find("H3").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H3":
                     outline = GameObject.Find("H4").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H4":
                     outline = GameObject.Find("H5").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H5":
                     outline = GameObject.Find("H6").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H6":
                     outline = GameObject.Find("H7").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H7":
                     outline = GameObject.Find("H8").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H8":
                     outline = GameObject.Find("H9").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H9":
                     outline = GameObject.Find("H10").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 case "H10":
                     outline = GameObject.Find("H11").AddComponent<Outline>();
 
                     outline.OutlineMode = Outline.Mode.OutlineAll;
                     outline.OutlineColor = Color.yellow;
-                    outline.OutlineWidth = 50f;
+                    outline.OutlineWidth = 10f;
                     break;
                 default:
                     break;
