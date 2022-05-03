@@ -45,59 +45,33 @@ public class ManipulationButtons : MonoBehaviour
         }
     }
 
-    public void purpleYellow()
+    public void changeColor()
     {
-        GameObject[] knobs = GameObject.FindGameObjectsWithTag("Knob");
-        // Material purple = (Material)Resources.Load("Wall_Purple", typeof(Material));
-        // Material yellow = (Material)Resources.Load("Wall_Yellow", typeof(Material));
-
-        foreach(GameObject knob in knobs){
-
-            int color = Random.Range(0,2);
-
-            if(color == 0){
-                knob.GetComponent<MeshRenderer>().sharedMaterial = purple;
-            }
-            else if(color == 1){
-                knob.GetComponent<MeshRenderer>().sharedMaterial = yellow;
-            }
+        Material color1 = blue;
+        Material color2 = orange; 
+        if(this.transform.parent.gameObject.name == "Purple/Yellow"){
+            color1 = purple;
+            color2 = yellow;
         }
-    }
-
-    public void OrangeBlue()
-    {
-        GameObject[] knobs = GameObject.FindGameObjectsWithTag("Knob");
-        // Material orange = (Material)Resources.Load("Wall_Orange", typeof(Material));
-        // Material blue = (Material)Resources.Load("Wall_Blue", typeof(Material));
-
-        foreach(GameObject knob in knobs){
-
-            int color = Random.Range(0,2);
-
-            if(color == 0){
-                knob.GetComponent<MeshRenderer> ().sharedMaterial = orange;
-            }
-            else if(color == 1){
-                knob.GetComponent<MeshRenderer> ().sharedMaterial = blue;
-            }
+        else if (this.transform.parent.gameObject.name == "Navy/Green"){
+            color1 = navy;
+            color2 = green;
         }
-    }
-
-    public void NavyGreen()
-    {
+        else if(this.transform.parent.gameObject.name == "Blue/Orange"){
+            color1 = blue;
+            color2 = orange;
+        }
         GameObject[] knobs = GameObject.FindGameObjectsWithTag("Knob");
-        // Material navy = (Material)Resources.Load("Wall_Navy", typeof(Material));
-        // Material green = (Material)Resources.Load("Wall_Green", typeof(Material));
 
         foreach(GameObject knob in knobs){
 
             int color = Random.Range(0,2);
 
             if(color == 0){
-                knob.GetComponent<MeshRenderer> ().sharedMaterial = navy;
+                knob.GetComponent<MeshRenderer>().sharedMaterial = color1;
             }
             else if(color == 1){
-                knob.GetComponent<MeshRenderer> ().sharedMaterial = green;
+                knob.GetComponent<MeshRenderer>().sharedMaterial = color2;
             }
         }
     }

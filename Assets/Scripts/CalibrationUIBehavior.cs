@@ -5,18 +5,21 @@ using UnityEngine;
 public class CalibrationUIBehavior : MonoBehaviour
 {
     public GameObject calibrationText;
-    public GameObject recalibrateScreen;
+    public GameObject recalibrateText;
+    public GameObject recalibrateButtons;
 
     // Update is called once per frame
     void Update()
     {
         if (GlobalBehavior.calibrationMode) {
             calibrationText.SetActive(true);
-            recalibrateScreen.SetActive(false);
+            recalibrateText.SetActive(false);
+            recalibrateButtons.SetActive(false);
 
         } else if (!GlobalBehavior.calibrationMode && GlobalBehavior.calibrationFinished && !GlobalBehavior.wallActive) {
             calibrationText.SetActive(false);
-            recalibrateScreen.SetActive(true);
+            recalibrateText.SetActive(true);
+            recalibrateButtons.SetActive(true);
         }
     }
 }
