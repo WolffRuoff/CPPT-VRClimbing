@@ -8,8 +8,7 @@ TagManager:
   - LHandAnchor
   - CalibrationCube
   - HandLaser
-  - GrabInteractor
-  - RayInteractor
+  - Knob
   layers:
   - Default
   - TransparentFX
