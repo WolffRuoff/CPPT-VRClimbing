@@ -18,7 +18,14 @@ public class RayController : MonoBehaviour
     {
         foreach (GameObject ray in GameObject.FindGameObjectsWithTag("RayInteractor"))
         {
-            ray.GetComponent<RayInteractor>().enabled = isRaying;
+            if (isRaying && ray.GetComponent<RayInteractor>().enabled)
+            {
+                ray.GetComponent<RayInteractor>().Enable();
+            }
+            else
+            {
+                ray.GetComponent<RayInteractor>().Disable();
+            }
         }
     }
 

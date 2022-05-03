@@ -1,3 +1,4 @@
+using Oculus.Interaction;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class StartCalibrationButton : MonoBehaviour
         if (GlobalBehavior.calibrationMode == false) {
             GlobalBehavior.calibrationMode = true;
         }
-        button.transform.parent.gameObject.SetActive(false);
+        //SFindObjectOfType<PointableCanvasModule>().RemovePointerCanvas(button.GetComponentInParent<PointableCanvas>());
+        button.gameObject.SetActive(false);
     }
 }
