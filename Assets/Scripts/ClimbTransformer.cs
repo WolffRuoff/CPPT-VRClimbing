@@ -1,25 +1,8 @@
-/************************************************************************************
-Copyright : Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved.
-
-Your use of this SDK or tool is subject to the Oculus SDK License Agreement, available at
-https://developer.oculus.com/licenses/oculussdk/
-
-Unless required by applicable law or agreed to in writing, the Utilities SDK distributed
-under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
-ANY KIND, either express or implied. See the License for the specific language governing
-permissions and limitations under the License.
-************************************************************************************/
-
 using Oculus.Interaction.Grab;
 using UnityEngine;
 
 namespace Oculus.Interaction
 {
-    /// <summary>
-    /// A Transformer that moves the oculus camera in a 1-1 fashion inverted with the GrabPoint.
-    /// Updates transform the target in such a way as to maintain the target's
-    /// local positional and rotational offsets from the GrabPoint.
-    /// </summary>
     public class ClimbTransformer : MonoBehaviour, ITransformer
     {
 
