@@ -153,7 +153,7 @@ namespace Oculus.Interaction
 
         public void UpdateTransform()
         {
-            if(currentHand.GetComponentInChildren<OVRHand>().HandConfidence == OVRHand.TrackingConfidence.Low)
+            if(currentHand.GetComponentInChildren<OVRHand>().HandConfidence == OVRHand.TrackingConfidence.Low && OVRPlugin.GetHandTrackingEnabled())
             {
                 Debug.Log("Low Hand Confidence");
                 return;
