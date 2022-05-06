@@ -153,13 +153,10 @@ namespace Oculus.Interaction
 
         public void UpdateTransform()
         {
-            if(currentHand.GetComponent<OVRHand>().HandConfidence == OVRHand.TrackingConfidence.Low)
+            if(currentHand.GetComponentInChildren<OVRHand>().HandConfidence == OVRHand.TrackingConfidence.Low)
             {
                 Debug.Log("Low Hand Confidence");
-            }
-            if(!currentHand.GetComponent<OVRHand>().IsTracked)
-            {
-                Debug.Log("Lost Tracking of hand");
+                return;
             }
             Vector3 worldOffsetFromGrab = initialHandPos - currentHand.transform.position;
 
