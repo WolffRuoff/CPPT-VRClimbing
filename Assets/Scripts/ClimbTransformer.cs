@@ -29,6 +29,7 @@ namespace Oculus.Interaction
             this.gameObject.GetComponent<Outline>().enabled = false;
 
             // TODO: clean up switch statement section below (added for wayfinding)
+            //char difficulty = _grabbable.Transform.gameObject.name.Split
             switch(_grabbable.Transform.gameObject.name) {
                 case "E1":
                     GameObject.Find("E2").GetComponent<Outline>().enabled=true;
@@ -152,6 +153,14 @@ namespace Oculus.Interaction
 
         public void UpdateTransform()
         {
+            if(currentHand.GetComponent<OVRHand>().HandConfidence == OVRHand.TrackingConfidence.Low)
+            {
+                Debug.Log("Low Hand Confidence");
+            }
+            if(!currentHand.GetComponent<OVRHand>().IsTracked)
+            {
+                Debug.Log("Lost Tracking of hand");
+            }
             Vector3 worldOffsetFromGrab = initialHandPos - currentHand.transform.position;
 
             player.transform.position += worldOffsetFromGrab;
