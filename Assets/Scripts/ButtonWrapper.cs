@@ -9,6 +9,9 @@ public class ButtonWrapper : MonoBehaviour
     public GameObject rightHand;
     public GameObject cubeToSpawn;
 
+    public GameObject originalCalibrationText;
+    public GameObject nextCalibrationText;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -72,18 +75,37 @@ public class ButtonWrapper : MonoBehaviour
     public void Selecting(float controller)
     {
         if (GlobalBehavior.calibrationMode) {
-            if (controller == 1 && !GlobalBehavior.rightHandCalibrationSet) {
-                GlobalBehavior.rightSpawnPos = rightHand.transform.position;
-                GlobalBehavior.rightHandCalibrationSet = true;
-                Instantiate(cubeToSpawn, GlobalBehavior.rightSpawnPos, Quaternion.identity);
-            } else if (controller == 0 && !GlobalBehavior.leftHandCalibrationSet) {
-                GlobalBehavior.leftSpawnPos = leftHand.transform.position;
-                GlobalBehavior.leftHandCalibrationSet = true;
-                Instantiate(cubeToSpawn, GlobalBehavior.leftSpawnPos, Quaternion.identity);
+            if (controller == 1) { 
+                if (!GlobalBehavior.rightHandCalibrationSet) {
+                    GlobalBehavior.rightSpawnPos = rightHand.transform.position;
+                    GlobalBehavior.rightHandCalibrationSet = true;
+                    Instantiate(cubeToSpawn, GlobalBehavior.rightSpawnPos, Quaternion.identity);
+                } else if (!GlobalBehavior.sidewaysCalibration && !GlobalBehavior.rightHandUpCalibrationSet) {
+                    GlobalBehavior.rightUpSpawnPos = rightHand.transform.position;
+                    GlobalBehavior.rightHandUpCalibrationSet = true;
+                    Instantiate(cubeToSpawn, GlobalBehavior.rightUpSpawnPos, Quaternion.identity);                   
+                }
+            } else if (controller == 0) { 
+                if (!GlobalBehavior.leftHandCalibrationSet) {
+                    GlobalBehavior.leftSpawnPos = leftHand.transform.position;
+                    GlobalBehavior.leftHandCalibrationSet = true;
+                    Instantiate(cubeToSpawn, GlobalBehavior.leftSpawnPos, Quaternion.identity);
+                } else if (!GlobalBehavior.sidewaysCalibration && !GlobalBehavior.leftHandUpCalibrationSet) {
+                    GlobalBehavior.leftUpSpawnPos = leftHand.transform.position;
+                    GlobalBehavior.leftHandUpCalibrationSet = true;
+                    Instantiate(cubeToSpawn, GlobalBehavior.leftUpSpawnPos, Quaternion.identity);                     
+                }
             }
             if (GlobalBehavior.rightHandCalibrationSet && GlobalBehavior.leftHandCalibrationSet) {
-                GlobalBehavior.calibrationMode = false;
-                GlobalBehavior.calibrationFinished = true;
+                if (!GlobalBehavior.rightHandUpCalibrationSet && !GlobalBehavior.leftHandUpCalibrationSet) {
+                    GlobalBehavior.sidewaysCalibration = false;
+                    originalCalibrationText.SetActive(false);
+                    nextCalibrationText.SetActive(true);
+                } else if (GlobalBehavior.rightHandUpCalibrationSet && GlobalBehavior.leftHandUpCalibrationSet) {
+                    GlobalBehavior.sidewaysCalibration = true;
+                    GlobalBehavior.calibrationMode = false;
+                    GlobalBehavior.calibrationFinished = true;
+                }
             }
         }
     }

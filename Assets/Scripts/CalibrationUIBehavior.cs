@@ -5,6 +5,7 @@ using UnityEngine;
 public class CalibrationUIBehavior : MonoBehaviour
 {
     public GameObject calibrationText;
+    public GameObject nextCalibrationText;
     public GameObject recalibrateText;
     public GameObject recalibrateButtons;
 
@@ -12,12 +13,19 @@ public class CalibrationUIBehavior : MonoBehaviour
     void Update()
     {
         if (GlobalBehavior.calibrationMode) {
-            calibrationText.SetActive(true);
+            if (GlobalBehavior.sidewaysCalibration) {
+                calibrationText.SetActive(true);
+                nextCalibrationText.SetActive(false);
+            } else {
+                calibrationText.SetActive(false);
+                nextCalibrationText.SetActive(true);                
+            }
             recalibrateText.SetActive(false);
             recalibrateButtons.SetActive(false);
 
         } else if (!GlobalBehavior.calibrationMode && GlobalBehavior.calibrationFinished && !GlobalBehavior.wallActive) {
             calibrationText.SetActive(false);
+            nextCalibrationText.SetActive(false);
             recalibrateText.SetActive(true);
             recalibrateButtons.SetActive(true);
         }
