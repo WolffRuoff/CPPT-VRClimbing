@@ -13,12 +13,15 @@ public class WallAppearBehavior : MonoBehaviour
     public GameObject manipulationText;
     public GameObject[] manipulationButtons;
 
+    public GameObject winText;
+    public GameObject replayButton;
+
     // Update is called once per frame
     public void ManipulateWall()
     {
         calibrationText.SetActive(false);
         ChangeRecalibrateButtons(false);
-        if(!GlobalBehavior.calibrationMode && !GlobalBehavior.wallActive && GlobalBehavior.calibrationFinished) {
+        if((!GlobalBehavior.calibrationMode && !GlobalBehavior.wallActive && GlobalBehavior.calibrationFinished)|| GlobalBehavior.replay) {
             climbingWall.SetActive(true);
 
             climbingWall.transform.position = new Vector3(0.0f,5.11f,20f);
@@ -32,6 +35,11 @@ public class WallAppearBehavior : MonoBehaviour
             {
                 c.SetActive(false);
             }
+
+            winText.SetActive(false);
+            replayButton.SetActive(false);
+
+            GlobalBehavior.replay = false;
         }
     }
     public void ChangeManipulateButtons(bool v)

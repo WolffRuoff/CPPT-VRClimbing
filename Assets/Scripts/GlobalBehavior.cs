@@ -18,4 +18,5 @@ public class GlobalBehavior : MonoBehaviour
     public static bool gameStarted = false;
 
     public static int rotateLevel = 0;
+    public static bool replay = false;
 }
