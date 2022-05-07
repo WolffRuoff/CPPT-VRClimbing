@@ -1,25 +1,8 @@
-/************************************************************************************
-Copyright : Copyright (c) Facebook Technologies, LLC and its affiliates. All rights reserved.
-
-Your use of this SDK or tool is subject to the Oculus SDK License Agreement, available at
-https://developer.oculus.com/licenses/oculussdk/
-
-Unless required by applicable law or agreed to in writing, the Utilities SDK distributed
-under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
-ANY KIND, either express or implied. See the License for the specific language governing
-permissions and limitations under the License.
-************************************************************************************/
-
 using Oculus.Interaction.Grab;
 using UnityEngine;
 
 namespace Oculus.Interaction
 {
-    /// <summary>
-    /// A Transformer that moves the oculus camera in a 1-1 fashion inverted with the GrabPoint.
-    /// Updates transform the target in such a way as to maintain the target's
-    /// local positional and rotational offsets from the GrabPoint.
-    /// </summary>
     public class ClimbTransformer : MonoBehaviour, ITransformer
     {
 
@@ -46,6 +29,7 @@ namespace Oculus.Interaction
             this.gameObject.GetComponent<Outline>().enabled = false;
 
             // TODO: clean up switch statement section below (added for wayfinding)
+            //char difficulty = _grabbable.Transform.gameObject.name.Split
             switch(_grabbable.Transform.gameObject.name) {
                 case "E1":
                     GameObject.Find("E2").GetComponent<Outline>().enabled=true;
@@ -169,6 +153,11 @@ namespace Oculus.Interaction
 
         public void UpdateTransform()
         {
+            if(currentHand.GetComponentInChildren<OVRHand>().HandConfidence == OVRHand.TrackingConfidence.Low && OVRPlugin.GetHandTrackingEnabled())
+            {
+                Debug.Log("Low Hand Confidence");
+                return;
+            }
             Vector3 worldOffsetFromGrab = initialHandPos - currentHand.transform.position;
 
             player.transform.position += worldOffsetFromGrab;

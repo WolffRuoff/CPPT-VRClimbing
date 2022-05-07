@@ -12,9 +12,7 @@ public class WinBehavior : MonoBehaviour
 
         winText.SetActive(true);
         replayButton.SetActive(true);
-        // GlobalBehavior.wallActive = false;
-        // GlobalBehavior.calibrationMode = false;
-        // GlobalBehavior.calibrationFinished = true;
+        GlobalBehavior.replay = true;
 
         GameObject.FindObjectOfType<RayController>().SetRaying(true);
     }
