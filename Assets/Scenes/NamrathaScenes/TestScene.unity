@@ -7254,7 +7254,7 @@ MonoBehaviour:
   pauseMenu: {fileID: 558398745}
   pauseButtons: {fileID: 888115956}
   winText: {fileID: 1779842290}
-  replayButton: {fileID: 2018854761}
+  replayButton: {fileID: 2018854759}
   player: {fileID: 0}
 --- !u!1 &1746821940
 GameObject:
@@ -8270,10 +8270,10 @@ MonoBehaviour:
   - {fileID: 1019571028}
   - {fileID: 69279939}
   - {fileID: 525434136}
-  pauseMenu: {fileID: 0}
-  pauseButtons: {fileID: 0}
-  winText: {fileID: 0}
-  replayButton: {fileID: 0}
+  pauseMenu: {fileID: 558398745}
+  pauseButtons: {fileID: 888115956}
+  winText: {fileID: 1779842290}
+  replayButton: {fileID: 2018854759}
   player: {fileID: 0}
 --- !u!1 &1986494312
 GameObject:
@@ -8672,11 +8672,6 @@ MonoBehaviour:
   winText: {fileID: 1779842290}
   replayButton: {fileID: 2018854759}
   player: {fileID: 0}
---- !u!1 &2018854761 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5608294159673700495, guid: 40a67fae7720745d5884286ca495741f, type: 3}
-  m_PrefabInstance: {fileID: 2018854758}
-  m_PrefabAsset: {fileID: 0}
 --- !u!20 &2031214848 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5370205422972778144, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
