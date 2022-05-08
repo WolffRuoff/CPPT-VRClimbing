@@ -42,6 +42,7 @@ public class WallAppearBehavior : MonoBehaviour
             GlobalBehavior.replay = false;
         }
     }
+    
     public void ChangeManipulateButtons(bool v)
     {
         foreach (GameObject obj in manipulationButtons)

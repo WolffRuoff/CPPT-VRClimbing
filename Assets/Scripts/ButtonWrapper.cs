@@ -9,6 +9,8 @@ public class ButtonWrapper : MonoBehaviour
     public GameObject rightHand;
     public GameObject cubeToSpawn;
 
+    public GameObject camera;
+
     public GameObject originalCalibrationText;
     public GameObject nextCalibrationText;
 
@@ -77,23 +79,23 @@ public class ButtonWrapper : MonoBehaviour
         if (GlobalBehavior.calibrationMode) {
             if (controller == 1) { 
                 if (!GlobalBehavior.rightHandCalibrationSet) {
-                    GlobalBehavior.rightSpawnPos = rightHand.transform.position;
+                    GlobalBehavior.rightSpawnPos = (rightHand.transform.position - camera.transform.position);
                     GlobalBehavior.rightHandCalibrationSet = true;
-                    Instantiate(cubeToSpawn, GlobalBehavior.rightSpawnPos, Quaternion.identity);
+                    Instantiate(cubeToSpawn, rightHand.transform.position, Quaternion.identity);
                 } else if (!GlobalBehavior.sidewaysCalibration && !GlobalBehavior.rightHandUpCalibrationSet) {
-                    GlobalBehavior.rightUpSpawnPos = rightHand.transform.position;
+                    GlobalBehavior.rightUpSpawnPos = (rightHand.transform.position - camera.transform.position);
                     GlobalBehavior.rightHandUpCalibrationSet = true;
-                    Instantiate(cubeToSpawn, GlobalBehavior.rightUpSpawnPos, Quaternion.identity);                   
+                    Instantiate(cubeToSpawn, rightHand.transform.position, Quaternion.identity);                   
                 }
             } else if (controller == 0) { 
                 if (!GlobalBehavior.leftHandCalibrationSet) {
-                    GlobalBehavior.leftSpawnPos = leftHand.transform.position;
+                    GlobalBehavior.leftSpawnPos = (leftHand.transform.position - camera.transform.position);
                     GlobalBehavior.leftHandCalibrationSet = true;
-                    Instantiate(cubeToSpawn, GlobalBehavior.leftSpawnPos, Quaternion.identity);
+                    Instantiate(cubeToSpawn, leftHand.transform.position, Quaternion.identity);
                 } else if (!GlobalBehavior.sidewaysCalibration && !GlobalBehavior.leftHandUpCalibrationSet) {
-                    GlobalBehavior.leftUpSpawnPos = leftHand.transform.position;
+                    GlobalBehavior.leftUpSpawnPos = (leftHand.transform.position - camera.transform.position);
                     GlobalBehavior.leftHandUpCalibrationSet = true;
-                    Instantiate(cubeToSpawn, GlobalBehavior.leftUpSpawnPos, Quaternion.identity);                     
+                    Instantiate(cubeToSpawn, leftHand.transform.position, Quaternion.identity);                     
                 }
             }
             if (GlobalBehavior.rightHandCalibrationSet && GlobalBehavior.leftHandCalibrationSet) {

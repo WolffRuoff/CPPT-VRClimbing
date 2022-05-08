@@ -5,14 +5,11 @@ using UnityEngine;
 public class WinBehavior : MonoBehaviour
 {
 
-    public GameObject winText;
-    public GameObject replayButton;
+    // public GameObject winText;
+    // public GameObject replayButton;
 
     public void WinPressed(){
-
-        winText.SetActive(true);
-        replayButton.SetActive(true);
-        GlobalBehavior.replay = true;
+        GlobalBehavior.enableReplay = true;
 
         GameObject.FindObjectOfType<RayController>().SetRaying(true);
     }
