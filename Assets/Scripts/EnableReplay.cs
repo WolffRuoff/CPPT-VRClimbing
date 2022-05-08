@@ -14,7 +14,7 @@ public class EnableReplay : MonoBehaviour
     {
         if (GlobalBehavior.enableReplay) {
             winText.transform.position = center.transform.position;
-            replayButton.transform.position = new Vector3(winText.transform.position.x, winText.transform.position.y - 1f, winText.transform.position.z);
+            replayButton.transform.position = new Vector3(winText.transform.position.x, winText.transform.position.y - 0.5f, winText.transform.position.z);
 
             winText.SetActive(true);
             replayButton.SetActive(true);

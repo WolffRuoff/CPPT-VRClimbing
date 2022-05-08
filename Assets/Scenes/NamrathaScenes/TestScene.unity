@@ -953,8 +953,8 @@ MonoBehaviour:
   rightHand: {fileID: 1524775837}
   cubeToSpawn: {fileID: 1213036085400711340, guid: d33ea68dc38754dd3b15a0447eee5a07, type: 3}
   camera: {fileID: 664088009}
-  pauseMenu: {fileID: 0}
-  pauseButtons: {fileID: 0}
+  pauseMenu: {fileID: 558398745}
+  pauseButtons: {fileID: 888115956}
   originalCalibrationText: {fileID: 1652226207}
   nextCalibrationText: {fileID: 1716723020}
 --- !u!1 &306490870 stripped
@@ -2443,7 +2443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &558398746
 Transform:
   m_ObjectHideFlags: 0
@@ -3368,7 +3368,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh533160
+  m_Name: pb_Mesh609180
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3698,7 +3698,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &888115957
 Transform:
   m_ObjectHideFlags: 0
@@ -6194,8 +6194,8 @@ MonoBehaviour:
   rightHand: {fileID: 1524775837}
   cubeToSpawn: {fileID: 1213036085400711340, guid: d33ea68dc38754dd3b15a0447eee5a07, type: 3}
   camera: {fileID: 664088009}
-  pauseMenu: {fileID: 0}
-  pauseButtons: {fileID: 0}
+  pauseMenu: {fileID: 558398745}
+  pauseButtons: {fileID: 888115956}
   originalCalibrationText: {fileID: 1652226207}
   nextCalibrationText: {fileID: 1716723020}
 --- !u!1 &1559814966
@@ -7249,7 +7249,7 @@ MonoBehaviour:
   recalibrateButtons:
   - {fileID: 1027489384}
   - {fileID: 433106473}
-  manipulationText: {fileID: 0}
+  manipulationText: {fileID: 1149684157}
   manipulationButtons:
   - {fileID: 311704604}
   - {fileID: 1970890422}
@@ -8945,7 +8945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2679833180753098752, guid: c6a05bc40e9b44a7181cce579d9c1f8c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2679833180753098753, guid: c6a05bc40e9b44a7181cce579d9c1f8c, type: 3}
       propertyPath: m_Mesh

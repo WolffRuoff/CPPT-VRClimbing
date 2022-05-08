@@ -10,7 +10,6 @@ public class WinBehavior : MonoBehaviour
 
     public void WinPressed(){
         GlobalBehavior.enableReplay = true;
-
         GameObject.FindObjectOfType<RayController>().SetRaying(true);
     }
 }
