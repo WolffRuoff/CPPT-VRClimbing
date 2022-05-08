@@ -27,4 +27,9 @@ public class GlobalBehavior : MonoBehaviour
 
     public static int rotateLevel = 0;
     public static bool replay = false;
+
+    public static bool enableReplay = false;
+
+    public static Material rightColor;
+    public static Material leftColor;
 }

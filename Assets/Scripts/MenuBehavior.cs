@@ -17,7 +17,7 @@ public class MenuBehavior : MonoBehaviour
         pauseMenu.SetActive(false);
         pauseButtons.SetActive(false);
         GameObject.FindObjectOfType<RayController>().SetRaying(false);
-        GlobalBehavior.replay = false;
+        // GlobalBehavior.replay = false;
     }
 
 }

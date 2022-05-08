@@ -73,9 +73,6 @@ namespace Oculus.Interaction
                 case "E14":
                     GameObject.Find("E15").GetComponent<Outline>().enabled=true;
                     break;
-                case "E15":
-                    GameObject.Find("E16").GetComponent<Outline>().enabled=true;
-                    break;
                 case "M1":
                     GameObject.Find("M2").GetComponent<Outline>().enabled = true;
                     break;
