@@ -78,6 +78,8 @@ public class WallAppearBehavior : MonoBehaviour
         GlobalBehavior.calibrationFinished = false;
         GlobalBehavior.rightHandCalibrationSet = false;
         GlobalBehavior.leftHandCalibrationSet = false;
+        GlobalBehavior.rightHandUpCalibrationSet = false;
+        GlobalBehavior.leftHandUpCalibrationSet = false;
         GameObject[] cubes = GameObject.FindGameObjectsWithTag("CalibrationCube");
         foreach (GameObject c in cubes)
         {
