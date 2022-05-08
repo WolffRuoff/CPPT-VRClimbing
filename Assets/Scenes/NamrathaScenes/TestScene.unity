@@ -3368,7 +3368,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh609180
+  m_Name: pb_Mesh612830
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -3958,7 +3958,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   winText: {fileID: 1779842290}
   replayButton: {fileID: 2018854759}
-  center: {fileID: 1081374321}
+  center: {fileID: 664088009}
 --- !u!1 &957595209
 GameObject:
   m_ObjectHideFlags: 0
@@ -4710,11 +4710,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1059540535}
   m_CullTransparentMesh: 1
---- !u!1 &1081374321 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5314623129408370974, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
-  m_PrefabInstance: {fileID: 525771748}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1104162204
 GameObject:
   m_ObjectHideFlags: 0
@@ -7090,7 +7085,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5256138823960611979, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ManipulateWall
+      value: RestartGame
       objectReference: {fileID: 0}
     - target: {fileID: 5256138823960611979, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -8603,7 +8598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5608294159673700488, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 11.07
+      value: 3.9
       objectReference: {fileID: 0}
     - target: {fileID: 5608294159673700488, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -8672,8 +8667,8 @@ MonoBehaviour:
   - {fileID: 1019571028}
   - {fileID: 69279939}
   - {fileID: 525434136}
-  pauseMenu: {fileID: 0}
-  pauseButtons: {fileID: 0}
+  pauseMenu: {fileID: 558398745}
+  pauseButtons: {fileID: 888115956}
   winText: {fileID: 1779842290}
   replayButton: {fileID: 2018854759}
   player: {fileID: 0}
@@ -8945,7 +8940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2679833180753098752, guid: c6a05bc40e9b44a7181cce579d9c1f8c, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2679833180753098753, guid: c6a05bc40e9b44a7181cce579d9c1f8c, type: 3}
       propertyPath: m_Mesh
@@ -32209,7 +32204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6767607207736083271, guid: a8ee23d24fd724eed929db87ab95af29, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.4
+      value: -14.38946
       objectReference: {fileID: 0}
     - target: {fileID: 6767607207736083271, guid: a8ee23d24fd724eed929db87ab95af29, type: 3}
       propertyPath: m_LocalRotation.w
@@ -32229,11 +32224,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6767607207736083271, guid: a8ee23d24fd724eed929db87ab95af29, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -86.00294
+      value: -86
       objectReference: {fileID: 0}
     - target: {fileID: 6767607207736083271, guid: a8ee23d24fd724eed929db87ab95af29, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -685.3
+      value: -685.38
       objectReference: {fileID: 0}
     - target: {fileID: 6767607207736083271, guid: a8ee23d24fd724eed929db87ab95af29, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

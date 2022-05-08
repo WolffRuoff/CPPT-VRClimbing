@@ -74,5 +74,6 @@ public class GenerateKnobs : MonoBehaviour
         }
         GameObject win = Instantiate(winButton, new Vector3(currentKnob.transform.position.x, currentKnob.transform.position.y + 0.5f, currentKnob.transform.position.z), Quaternion.identity);
         win.transform.parent = wall.transform;
+        win.transform.Rotate(-90f, -90f, 90f);
     }
 }

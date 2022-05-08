@@ -21,8 +21,15 @@ public class WallAppearBehavior : MonoBehaviour
 
     public GameObject player;
 
+    private bool restartGame = false;
+
     public void Start(){
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    public void RestartGame() {
+        restartGame = true;
+        ManipulateWall();
     }
 
     // Update is called once per frame
@@ -30,7 +37,7 @@ public class WallAppearBehavior : MonoBehaviour
     {
         calibrationText.SetActive(false);
         ChangeRecalibrateButtons(false);
-        if((!GlobalBehavior.calibrationMode && !GlobalBehavior.wallActive && GlobalBehavior.calibrationFinished)|| GlobalBehavior.replay) {
+        if(restartGame || (!GlobalBehavior.calibrationMode && !GlobalBehavior.wallActive && GlobalBehavior.calibrationFinished) || GlobalBehavior.replay) {
             climbingWall.SetActive(true);
 
             climbingWall.transform.position = new Vector3(0.0f,5.11f,20f);
@@ -51,12 +58,11 @@ public class WallAppearBehavior : MonoBehaviour
 
             pauseMenu.SetActive(false);
             pauseButtons.SetActive(false);
-
             winText.SetActive(false);
             replayButton.SetActive(false);
 
             player.transform.position = new Vector3(0f, 0f, 0f);
-
+            restartGame = false;
         }
     }
     

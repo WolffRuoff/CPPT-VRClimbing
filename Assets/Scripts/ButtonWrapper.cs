@@ -119,7 +119,6 @@ public class ButtonWrapper : MonoBehaviour
             pauseButtons.SetActive(true);
             pauseButtons.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, pauseButtons.transform.position.z);
             GameObject.FindObjectOfType<RayController>().SetRaying(true);
-            GlobalBehavior.replay = true;
         }
     }
 
