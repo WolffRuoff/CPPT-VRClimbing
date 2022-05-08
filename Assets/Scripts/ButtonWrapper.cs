@@ -10,6 +10,8 @@ public class ButtonWrapper : MonoBehaviour
     public GameObject cubeToSpawn;
 
     public GameObject camera;
+    public GameObject pauseMenu;
+    public GameObject pauseButtons;
 
     public GameObject originalCalibrationText;
     public GameObject nextCalibrationText;
@@ -17,7 +19,8 @@ public class ButtonWrapper : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        pauseMenu.SetActive(false);
+        pauseButtons.SetActive(false);
     }
 
     // Update is called once per frame
@@ -109,6 +112,14 @@ public class ButtonWrapper : MonoBehaviour
                     GlobalBehavior.calibrationFinished = true;
                 }
             }
+        }
+        else if (GlobalBehavior.gameStarted) {
+            pauseMenu.SetActive(true);
+            pauseMenu.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, pauseMenu.transform.position.z);
+            pauseButtons.SetActive(true);
+            pauseButtons.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, pauseButtons.transform.position.z);
+            GameObject.FindObjectOfType<RayController>().SetRaying(true);
+            GlobalBehavior.replay = true;
         }
     }
 

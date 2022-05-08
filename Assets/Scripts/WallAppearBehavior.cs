@@ -13,8 +13,17 @@ public class WallAppearBehavior : MonoBehaviour
     public GameObject manipulationText;
     public GameObject[] manipulationButtons;
 
+    public GameObject pauseMenu;
+    public GameObject pauseButtons;
+
     public GameObject winText;
     public GameObject replayButton;
+
+    public GameObject player;
+
+    public void Start(){
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
 
     // Update is called once per frame
     public void ManipulateWall()
@@ -28,6 +37,8 @@ public class WallAppearBehavior : MonoBehaviour
             ChangeManipulateButtons(true);
             manipulationText.SetActive(true);
 
+            GlobalBehavior.gameStarted = false;
+
             GameObject.FindObjectOfType<RayController>().SetRaying(true);
             GlobalBehavior.wallActive = true;
             GameObject[] cubes = GameObject.FindGameObjectsWithTag("CalibrationCube");
@@ -36,10 +47,16 @@ public class WallAppearBehavior : MonoBehaviour
                 c.SetActive(false);
             }
 
+            GlobalBehavior.replay = false;
+
+            pauseMenu.SetActive(false);
+            pauseButtons.SetActive(false);
+
             winText.SetActive(false);
             replayButton.SetActive(false);
 
-            GlobalBehavior.replay = false;
+            player.transform.position = new Vector3(0f, 0f, 0f);
+
         }
     }
     
@@ -77,6 +94,8 @@ public class WallAppearBehavior : MonoBehaviour
         manipulationText.SetActive(false);
 
         climbingWall.transform.position = new Vector3(0.0f,5.11f,3.71f);
+
+        GlobalBehavior.gameStarted = true;
 
         // laserPointer.SetActive(false);
         GameObject.FindObjectOfType<RayController>().SetRaying(false);
