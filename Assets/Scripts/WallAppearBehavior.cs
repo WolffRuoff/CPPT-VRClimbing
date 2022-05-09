@@ -102,6 +102,7 @@ public class WallAppearBehavior : MonoBehaviour
         climbingWall.transform.position = new Vector3(0.0f,5.11f,3.71f);
 
         GlobalBehavior.gameStarted = true;
+        Debug.LogWarning("Status of gamestarted: " + GlobalBehavior.gameStarted);
 
         // laserPointer.SetActive(false);
         GameObject.FindObjectOfType<RayController>().SetRaying(false);

@@ -180,7 +180,7 @@ namespace Oculus.Interaction
                 }
                 else
                 {
-                    Debug.Log("Unselecting " + hand.name);
+                    //Debug.Log("Unselecting " + hand.name);
                     hand.GetComponent<IInteractor>().Unselect();
                 }
             }

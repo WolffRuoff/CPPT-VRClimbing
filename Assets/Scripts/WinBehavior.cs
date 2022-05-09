@@ -5,9 +5,14 @@ using UnityEngine;
 public class WinBehavior : MonoBehaviour
 {
     public void WinPressed(){
+        Debug.Log("Called WinPressed");
         if (GlobalBehavior.gameStarted) {
             GlobalBehavior.enableReplay = true;
             GameObject.FindObjectOfType<RayController>().SetRaying(true);
+        }
+        else
+        {
+            Debug.LogWarning("Gamestarted " + GlobalBehavior.gameStarted);
         }
     }
 }
