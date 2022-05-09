@@ -66,7 +66,7 @@ public class GenerateKnobs : MonoBehaviour
 
         GameObject prevKnob = currentKnob;
         float prevLeft = prevKnob.transform.position.x;
-        float prevRight = 1000f;
+        float prevRight = prevLeft+difficulty*.1f;
 
         while (i <= 15) {
             int num = random.Next(0, 3);
@@ -77,32 +77,32 @@ public class GenerateKnobs : MonoBehaviour
                 right = false;
             }
             Vector3 newPos;
-            float randX = (float)(random.NextDouble() * (difficulty) - 1.5);
-            float randY = (float)(random.NextDouble() * 3f + difficulty);
-            if (right && randX * GlobalBehavior.rightSpawnPos.x + currentKnob.transform.position.x < prevLeft)
+            float randX = (float)(random.NextDouble() * (difficulty) - (difficulty/2));
+            float randY = (float)(random.NextDouble() * (difficulty/2) + difficulty);
+            if (right && randX * GlobalBehavior.rightSpawnPos.x + currentKnob.transform.position.x <= prevLeft)
                 randX = randX * -1;
-            else if (!right && randX * GlobalBehavior.leftSpawnPos.x + currentKnob.transform.position.x > prevRight)
+            else if (!right && randX * GlobalBehavior.leftSpawnPos.x + currentKnob.transform.position.x >= prevRight)
                 randX = randX * -1;
 
 
             if (right)
             {
-                float newX = currentKnob.transform.position.x + GlobalBehavior.rightSpawnPos.x * randX;
+                float newX = prevRight + GlobalBehavior.rightSpawnPos.x * randX;
                 if (newX > 1.5f) {
-                    newX = newX - 1f;
-                    randY = randY + 0.25f;
+                    newX = newX -0.5f;
+                    randY = randY + 0.05f;
                 } else if (newX < -2.5f) {
-                    newX = newX + 0.25f;
+                    newX = newX + 0.5f;
                 }
                 newPos = new Vector3(newX, currentKnob.transform.position.y + GlobalBehavior.rightUpSpawnPos.y * randY, currentKnob.transform.position.z);
                 currentKnob = Instantiate(knobs[random.Next(knobs.Length)]);
             }
             else
             {
-                float newX = currentKnob.transform.position.x + GlobalBehavior.rightSpawnPos.x * randX;
+                float newX = prevLeft + GlobalBehavior.rightSpawnPos.x * randX;
                 if (newX > 1.5f) {
-                    newX = newX - 0.75f;
-                    randY = randY + 0.25f;
+                    newX = newX - 1f;
+                    randY = randY + 0.05f;
                 } else if (newX < -2.5f) {
                     newX = newX + 0.25f;
                 }
