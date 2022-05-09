@@ -30,6 +30,8 @@ public class GlobalBehavior : MonoBehaviour
 
     public static bool enableReplay = false;
 
+    public static List<GameObject> dangerKnobs = new List<GameObject>();
+
     public static Material rightColor;
     public static Material leftColor;
 }

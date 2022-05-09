@@ -14,6 +14,8 @@ public class GenerateKnobs : MonoBehaviour
     public GameObject medium1;
     public GameObject hard1;
 
+    public GameObject danger;
+
     public GameObject winButton;
 
     public Material rightMaterial;
@@ -65,11 +67,10 @@ public class GenerateKnobs : MonoBehaviour
         GameObject currentKnob = startKnob;
 
         GameObject prevKnob = currentKnob;
-        float prevLeft = prevKnob.transform.position.x;
-        float prevRight = prevLeft+difficulty*.1f;
+        float prevPos = prevKnob.transform.position.x;
+        // float prevRight = prevLeft+difficulty*.1f;
 
         while (i <= 15) {
-            int num = random.Next(0, 3);
             if (i % 2 == 0) {
                 // even vs. odd : can determine material for color, as well as right vs. left
                 right = true;
@@ -77,50 +78,62 @@ public class GenerateKnobs : MonoBehaviour
                 right = false;
             }
             Vector3 newPos;
-            float randX = (float)(random.NextDouble() * (difficulty) - (difficulty/2));
-            float randY = (float)(random.NextDouble() * (difficulty/2) + difficulty);
-            if (right && randX * GlobalBehavior.rightSpawnPos.x + currentKnob.transform.position.x <= prevLeft)
+            float randX = (float)(random.NextDouble() * (difficulty) - (difficulty / 3));
+            float randY = (float)(random.NextDouble() * (1.75f) + difficulty);
+
+            if (right && randX * GlobalBehavior.rightSpawnPos.x + currentKnob.transform.position.x <= prevPos)
                 randX = randX * -1;
-            else if (!right && randX * GlobalBehavior.leftSpawnPos.x + currentKnob.transform.position.x >= prevRight)
+            else if (!right && randX * GlobalBehavior.leftSpawnPos.x + currentKnob.transform.position.x >= prevPos)
                 randX = randX * -1;
 
+            if (i % 3 == 0) {
+                GameObject newDangerKnob = Instantiate(danger);
+                newDangerKnob.transform.position = new Vector3(prevPos - 0.45f, prevKnob.transform.position.y, prevKnob.transform.position.z);
+                newDangerKnob.transform.parent = prevKnob.transform.parent;
+                GlobalBehavior.dangerKnobs.Add(newDangerKnob);
+            }
 
             if (right)
             {
-                float newX = prevRight + GlobalBehavior.rightSpawnPos.x * randX;
-                if (newX > 1.5f) {
-                    newX = newX -0.5f;
-                    randY = randY + 0.05f;
-                } else if (newX < -2.5f) {
+                float newX = prevPos + (GlobalBehavior.rightSpawnPos.x * randX);
+                if (newX > 1.3f) {
+                    newX = newX - 1f;
+                } else if (newX < -2.7f) {
                     newX = newX + 0.5f;
                 }
-                newPos = new Vector3(newX, currentKnob.transform.position.y + GlobalBehavior.rightUpSpawnPos.y * randY, currentKnob.transform.position.z);
+                float newY = currentKnob.transform.position.y + GlobalBehavior.rightUpSpawnPos.y * randY;
+                if (newY > 15f) {
+                    break;
+                }
+                newPos = new Vector3(newX, newY, currentKnob.transform.position.z);
                 currentKnob = Instantiate(knobs[random.Next(knobs.Length)]);
             }
             else
             {
-                float newX = prevLeft + GlobalBehavior.rightSpawnPos.x * randX;
-                if (newX > 1.5f) {
+                float newX = prevPos - (GlobalBehavior.leftSpawnPos.x * randX);
+                if (newX > 1.3f) {
                     newX = newX - 1f;
-                    randY = randY + 0.05f;
-                } else if (newX < -2.5f) {
-                    newX = newX + 0.25f;
+                } else if (newX < -2.7f) {
+                    newX = newX + 0.5f;
                 }
-                newPos = new Vector3(newX, currentKnob.transform.position.y + GlobalBehavior.leftUpSpawnPos.y * randY, currentKnob.transform.position.z);
+                float newY = currentKnob.transform.position.y + GlobalBehavior.leftUpSpawnPos.y * randY;
+                if (newY > 15f) {
+                    break;
+                }
+                newPos = new Vector3(newX, newY, currentKnob.transform.position.z);
                 currentKnob = Instantiate(knobs[random.Next(knobs.Length)]);
             }
-            currentKnob.transform.position = newPos;
             if (right) {
                 currentKnob.GetComponent<Renderer>().material = GlobalBehavior.rightColor;
                 currentKnob.tag = "RightKnob";
-                prevRight = currentKnob.transform.position.x;
             } else {
                 currentKnob.GetComponent<Renderer>().material = GlobalBehavior.leftColor;
                 currentKnob.tag = "LeftKnob";
-                prevLeft = currentKnob.transform.position.x;
             }
             currentKnob.name = levelLetter + i;
             currentKnob.transform.parent = prevKnob.transform.parent;
+            currentKnob.transform.position = newPos;
+            prevPos = currentKnob.transform.position.x;
             prevKnob = currentKnob;
             i += 1;
         }
