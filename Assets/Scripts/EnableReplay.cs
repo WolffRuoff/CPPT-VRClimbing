@@ -16,8 +16,8 @@ public class EnableReplay : MonoBehaviour
             winText.SetActive(true);
             replayButton.SetActive(true);
 
-            winText.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0.53f);
-            replayButton.transform.position = new Vector3(winText.transform.position.x, winText.transform.position.y - 0.15f, 0.53f);
+            winText.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, 0.45f);
+            replayButton.transform.position = new Vector3(winText.transform.position.x, winText.transform.position.y - 0.15f, 0.45f);
 
             GlobalBehavior.enableReplay = false;
             GlobalBehavior.replay = true;

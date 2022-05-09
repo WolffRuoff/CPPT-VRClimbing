@@ -13,12 +13,18 @@ namespace Oculus.Interaction
         private Vector3 initialHandPos;
         private GameObject player;
 
+        private GameObject[] leftKnobs;
+        private GameObject[] rightKnobs;
+
         public void Initialize(IGrabbable grabbable)
         {
             _grabbable = grabbable;
             lHand = GameObject.FindGameObjectWithTag("LHandAnchor");
             rHand = GameObject.FindGameObjectWithTag("RHandAnchor");
             player = GameObject.FindGameObjectWithTag("Player");
+
+            leftKnobs = GameObject.FindGameObjectsWithTag("LeftKnob");
+            rightKnobs = GameObject.FindGameObjectsWithTag("RightKnob");
         }
 
         public void BeginTransform()
@@ -26,126 +32,31 @@ namespace Oculus.Interaction
             SetGrabbingHand();
             initialHandPos = currentHand.transform.position;
 
-            this.gameObject.GetComponent<Outline>().enabled = false;
-
-            // TODO: clean up switch statement section below (added for wayfinding)
-            //char difficulty = _grabbable.Transform.gameObject.name.Split
-            switch(_grabbable.Transform.gameObject.name) {
-                case "E1":
-                    GameObject.Find("E2").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E2":
-                    GameObject.Find("E3").GetComponent<Outline>().enabled = true;
-                    break;
-                case "E3":
-                    GameObject.Find("E4").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E4":
-                    GameObject.Find("E5").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E5":
-                    GameObject.Find("E6").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E6":
-                    GameObject.Find("E7").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E7":
-                    GameObject.Find("E8").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E8":
-                    GameObject.Find("E9").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E9":
-                    GameObject.Find("E10").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E10":
-                    GameObject.Find("E11").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E11":
-                    GameObject.Find("E12").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E12":
-                    GameObject.Find("E13").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E13":
-                    GameObject.Find("E14").GetComponent<Outline>().enabled=true;
-                    break;
-                case "E14":
-                    GameObject.Find("E15").GetComponent<Outline>().enabled=true;
-                    break;
-                case "M1":
-                    GameObject.Find("M2").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M2":
-                    GameObject.Find("M3").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M3":
-                    GameObject.Find("M4").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M4":
-                    GameObject.Find("M5").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M5":
-                    GameObject.Find("M6").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M6":
-                    GameObject.Find("M7").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M7":
-                    GameObject.Find("M8").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M8":
-                    GameObject.Find("M9").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M9":
-                    GameObject.Find("10").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M10":
-                    GameObject.Find("M11").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M11":
-                    GameObject.Find("M12").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M12":
-                    GameObject.Find("M13").GetComponent<Outline>().enabled = true;
-                    break;
-                case "M13":
-                    GameObject.Find("M14").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H1":
-                    GameObject.Find("H2").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H2":
-                    GameObject.Find("H3").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H3":
-                    GameObject.Find("H4").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H4":
-                    GameObject.Find("H5").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H5":
-                    GameObject.Find("H6").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H6":
-                    GameObject.Find("H7").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H7":
-                    GameObject.Find("H8").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H8":
-                    GameObject.Find("H9").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H9":
-                    GameObject.Find("H10").GetComponent<Outline>().enabled = true;
-                    break;
-                case "H10":
-                    GameObject.Find("H11").GetComponent<Outline>().enabled = true;
-                    break;
-                default:
-                    break;
+            // clear any previous outlines since we've selected a new knob
+            foreach(GameObject knob in leftKnobs){
+                knob.GetComponent<Outline>().enabled=false;
+            }
+            foreach(GameObject knob in rightKnobs){
+                knob.GetComponent<Outline>().enabled=false;
             }
 
+            // determine which knob to outline next based on current knob
+            int i = 1;
+            while (i <= 14) {
+                if (_grabbable.Transform.gameObject.name == "E" + i) {
+                    GameObject.Find("E" + (i + 1)).GetComponent<Outline>().enabled=true;
+                    break;
+                }
+                if (_grabbable.Transform.gameObject.name == "M" + i) {
+                    GameObject.Find("M" + (i + 1)).GetComponent<Outline>().enabled=true;
+                    break;
+                }
+                if (_grabbable.Transform.gameObject.name == "H" + i) {
+                    GameObject.Find("H" + (i + 1)).GetComponent<Outline>().enabled=true;
+                    break;
+                }         
+                i = i + 1;       
+            }
         }
 
         public void UpdateTransform()
@@ -180,7 +91,6 @@ namespace Oculus.Interaction
                 }
                 else
                 {
-                    //Debug.Log("Unselecting " + hand.name);
                     hand.GetComponent<IInteractor>().Unselect();
                 }
             }

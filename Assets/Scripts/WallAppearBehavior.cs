@@ -54,6 +54,15 @@ public class WallAppearBehavior : MonoBehaviour
                 c.SetActive(false);
             }
 
+            GameObject[] leftKnobs = GameObject.FindGameObjectsWithTag("LeftKnob");
+            GameObject[] rightKnobs = GameObject.FindGameObjectsWithTag("RightKnob");
+            foreach(GameObject knob in leftKnobs){
+                knob.GetComponent<Outline>().enabled=false;
+            }
+            foreach(GameObject knob in rightKnobs){
+                knob.GetComponent<Outline>().enabled=false;
+            }
+
             GlobalBehavior.replay = false;
 
             pauseMenu.SetActive(false);
