@@ -54,6 +54,10 @@ public class WallAppearBehavior : MonoBehaviour
                 c.SetActive(false);
             }
 
+            foreach(GameObject knob in GlobalBehavior.dangerKnobs){
+                knob.SetActive(true);
+            }            
+
             GameObject[] leftKnobs = GameObject.FindGameObjectsWithTag("LeftKnob");
             GameObject[] rightKnobs = GameObject.FindGameObjectsWithTag("RightKnob");
             foreach(GameObject knob in leftKnobs){

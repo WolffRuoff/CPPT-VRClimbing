@@ -44,15 +44,24 @@ namespace Oculus.Interaction
             int i = 1;
             while (i <= 14) {
                 if (_grabbable.Transform.gameObject.name == "E" + i) {
-                    GameObject.Find("E" + (i + 1)).GetComponent<Outline>().enabled=true;
+                    try {
+                        GameObject.Find("E" + (i + 1)).GetComponent<Outline>().enabled=true;
+                    } catch {
+                    }
                     break;
                 }
                 if (_grabbable.Transform.gameObject.name == "M" + i) {
-                    GameObject.Find("M" + (i + 1)).GetComponent<Outline>().enabled=true;
+                    try {
+                        GameObject.Find("M" + (i + 1)).GetComponent<Outline>().enabled=true;
+                    } catch {
+                    }
                     break;
                 }
                 if (_grabbable.Transform.gameObject.name == "H" + i) {
-                    GameObject.Find("H" + (i + 1)).GetComponent<Outline>().enabled=true;
+                    try {
+                        GameObject.Find("H" + (i + 1)).GetComponent<Outline>().enabled=true;
+                    } catch {
+                    }
                     break;
                 }         
                 i = i + 1;       

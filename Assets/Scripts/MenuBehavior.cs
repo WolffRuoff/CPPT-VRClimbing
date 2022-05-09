@@ -10,7 +10,7 @@ public class MenuBehavior : MonoBehaviour
     public GameObject[] pauseButtons;
 
     public void StartGameButton(){
-        SceneManager.LoadScene("TestScene");
+        SceneManager.LoadScene("MainGameScene");
     }
 
     public void ResumeGame(){
