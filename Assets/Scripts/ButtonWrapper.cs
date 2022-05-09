@@ -12,6 +12,7 @@ public class ButtonWrapper : MonoBehaviour
     public GameObject camera;
     public GameObject pauseMenu;
     public GameObject pauseButtons;
+    public GameObject[] pauseButtonsList;
 
     public GameObject originalCalibrationText;
     public GameObject nextCalibrationText;
@@ -20,7 +21,10 @@ public class ButtonWrapper : MonoBehaviour
     void Start()
     {
         pauseMenu.SetActive(false);
-        pauseButtons.SetActive(false);
+        foreach (GameObject button in pauseButtonsList)
+        {
+            button.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -116,7 +120,10 @@ public class ButtonWrapper : MonoBehaviour
         else if (GlobalBehavior.gameStarted) {
             pauseMenu.SetActive(true);
             pauseMenu.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, pauseMenu.transform.position.z);
-            pauseButtons.SetActive(true);
+            foreach (GameObject button in pauseButtonsList)
+            {
+                button.SetActive(true);
+            }
             pauseButtons.transform.position = new Vector3(Camera.main.transform.position.x, Camera.main.transform.position.y, pauseButtons.transform.position.z);
             GameObject.FindObjectOfType<RayController>().SetRaying(true);
         }

@@ -77,7 +77,7 @@ ConfigurableJoint:
   m_Anchor: {x: 0, y: 0, z: 0}
   m_Axis: {x: 1, y: 0, z: 0}
   m_AutoConfigureConnectedAnchor: 1
-  m_ConnectedAnchor: {x: 0, y: 1.7999969, z: 0}
+  m_ConnectedAnchor: {x: 0, y: 1.8, z: -0.0000000372529}
   serializedVersion: 2
   m_SecondaryAxis: {x: 0, y: 1, z: 0}
   m_XMotion: 0
@@ -230,7 +230,7 @@ Transform:
   m_GameObject: {fileID: 5405400381912397487}
   m_LocalRotation: {x: -0.70710677, y: 0, z: 0, w: 0.70710677}
   m_LocalPosition: {x: -3.04, y: 2.98, z: 0.02}
-  m_LocalScale: {x: 1, y: 1, z: 0.50000006}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5405400382742971481}
   - {fileID: 5405400381817449591}

@@ -932,18 +932,18 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7662904918283869753, guid: a3b7b59c1cab94a4496d8148195ae843, type: 3}
   m_PrefabInstance: {fileID: 195094455}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &238697384 stripped
+--- !u!1 &235462004 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 657658991984130871, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
+  m_CorrespondingSourceObject: {fileID: 3887073503940180835, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
   m_PrefabInstance: {fileID: 525771748}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &238697392
+--- !u!114 &235462008
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 238697384}
+  m_GameObject: {fileID: 235462004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ae5d69bc148aeb644be3cda4d9a3fc2a, type: 3}
@@ -955,6 +955,9 @@ MonoBehaviour:
   camera: {fileID: 664088009}
   pauseMenu: {fileID: 558398745}
   pauseButtons: {fileID: 888115956}
+  pauseButtonsList:
+  - {fileID: 912323920}
+  - {fileID: 1732636462}
   originalCalibrationText: {fileID: 1652226207}
   nextCalibrationText: {fileID: 1716723020}
 --- !u!1 &306490870 stripped
@@ -1197,7 +1200,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 95c7d240a756a4fc28a4fc2e30c01ec0, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.2
+  m_Volume: 0.4
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2026,7 +2029,7 @@ MonoBehaviour:
   manipulationText: {fileID: 1149684157}
   manipulationButtons: []
   pauseMenu: {fileID: 0}
-  pauseButtons: {fileID: 0}
+  pauseButtons: []
   winText: {fileID: 0}
   replayButton: {fileID: 0}
   player: {fileID: 0}
@@ -2065,7 +2068,7 @@ PrefabInstance:
     - target: {fileID: 5736367250714253078, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1540732009}
+      objectReference: {fileID: 235462008}
     - target: {fileID: 5736367250714253078, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[1].m_Target
       value: 
@@ -2117,7 +2120,7 @@ PrefabInstance:
     - target: {fileID: 6556239188297349360, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 238697392}
+      objectReference: {fileID: 235462008}
     - target: {fileID: 6556239188297349360, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
       propertyPath: _whenSelected.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Selecting
@@ -2174,7 +2177,8 @@ PrefabInstance:
       propertyPath: _useInitialPressPositionForDrag
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 1419127526, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
 --- !u!1 &555706712
 GameObject:
@@ -3692,13 +3696,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 888115957}
+  - component: {fileID: 888115958}
+  - component: {fileID: 888115959}
   m_Layer: 0
   m_Name: PauseMenuButtons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &888115957
 Transform:
   m_ObjectHideFlags: 0
@@ -3715,6 +3721,53 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &888115958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888115956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 288d1ae5bf8af4ef280b0003f226b1c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 558398745}
+  pauseButtons:
+  - {fileID: 912323920}
+  - {fileID: 1732636462}
+--- !u!114 &888115959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 888115956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b6d01ddb690fb449796902ade8b7f372, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  climbingWall: {fileID: 2679833181238188487}
+  calibrationText: {fileID: 1652226207}
+  recalibrateButtons:
+  - {fileID: 1027489384}
+  - {fileID: 433106473}
+  manipulationText: {fileID: 1149684157}
+  manipulationButtons:
+  - {fileID: 311704604}
+  - {fileID: 1970890422}
+  - {fileID: 1019571030}
+  - {fileID: 69279941}
+  - {fileID: 525434138}
+  pauseMenu: {fileID: 558398745}
+  pauseButtons:
+  - {fileID: 912323920}
+  - {fileID: 1732636462}
+  winText: {fileID: 1779842290}
+  replayButton: {fileID: 2018854759}
+  player: {fileID: 0}
 --- !u!1001 &912323918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3733,7 +3786,7 @@ PrefabInstance:
     - target: {fileID: 5256138823960611979, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 912323921}
+      objectReference: {fileID: 888115958}
     - target: {fileID: 5256138823960611979, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -3757,6 +3810,10 @@ PrefabInstance:
     - target: {fileID: 5256138823960611981, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256138823960611982, guid: 40a67fae7720745d5884286ca495741f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5608294159673700488, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_Pivot.x
@@ -3882,20 +3939,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5256138823960611982, guid: 40a67fae7720745d5884286ca495741f, type: 3}
   m_PrefabInstance: {fileID: 912323918}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &912323921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 912323920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 288d1ae5bf8af4ef280b0003f226b1c3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pauseMenu: {fileID: 558398745}
-  pauseButtons: {fileID: 888115956}
 --- !u!1 &912611122
 GameObject:
   m_ObjectHideFlags: 0
@@ -4523,7 +4566,7 @@ MonoBehaviour:
   - {fileID: 69279939}
   - {fileID: 525434136}
   pauseMenu: {fileID: 0}
-  pauseButtons: {fileID: 0}
+  pauseButtons: []
   winText: {fileID: 1779842290}
   replayButton: {fileID: 2018854759}
   player: {fileID: 0}
@@ -5628,7 +5671,7 @@ MonoBehaviour:
   manipulationText: {fileID: 0}
   manipulationButtons: []
   pauseMenu: {fileID: 0}
-  pauseButtons: {fileID: 0}
+  pauseButtons: []
   winText: {fileID: 0}
   replayButton: {fileID: 0}
   player: {fileID: 0}
@@ -6168,31 +6211,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5314623129031799185, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
   m_PrefabInstance: {fileID: 525771748}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1540732001 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2037775543737947345, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
-  m_PrefabInstance: {fileID: 525771748}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1540732009
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1540732001}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae5d69bc148aeb644be3cda4d9a3fc2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  leftHand: {fileID: 1180555255}
-  rightHand: {fileID: 1524775837}
-  cubeToSpawn: {fileID: 1213036085400711340, guid: d33ea68dc38754dd3b15a0447eee5a07, type: 3}
-  camera: {fileID: 664088009}
-  pauseMenu: {fileID: 558398745}
-  pauseButtons: {fileID: 888115956}
-  originalCalibrationText: {fileID: 1652226207}
-  nextCalibrationText: {fileID: 1716723020}
 --- !u!1 &1559814966
 GameObject:
   m_ObjectHideFlags: 0
@@ -7078,7 +7096,7 @@ PrefabInstance:
     - target: {fileID: 5256138823960611979, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1732636463}
+      objectReference: {fileID: 888115959}
     - target: {fileID: 5256138823960611979, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -7102,6 +7120,10 @@ PrefabInstance:
     - target: {fileID: 5256138823960611981, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_SizeDelta.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5256138823960611982, guid: 40a67fae7720745d5884286ca495741f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5608294159673700488, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_Pivot.x
@@ -7227,35 +7249,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5256138823960611982, guid: 40a67fae7720745d5884286ca495741f, type: 3}
   m_PrefabInstance: {fileID: 1732636460}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1732636463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1732636462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d01ddb690fb449796902ade8b7f372, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  climbingWall: {fileID: 2679833181238188487}
-  calibrationText: {fileID: 1652226207}
-  recalibrateButtons:
-  - {fileID: 1027489384}
-  - {fileID: 433106473}
-  manipulationText: {fileID: 1149684157}
-  manipulationButtons:
-  - {fileID: 311704604}
-  - {fileID: 1970890422}
-  - {fileID: 1019571030}
-  - {fileID: 69279941}
-  - {fileID: 525434138}
-  pauseMenu: {fileID: 558398745}
-  pauseButtons: {fileID: 888115956}
-  winText: {fileID: 1779842290}
-  replayButton: {fileID: 2018854759}
-  player: {fileID: 0}
 --- !u!1 &1746821940
 GameObject:
   m_ObjectHideFlags: 0
@@ -7314,7 +7307,7 @@ MonoBehaviour:
   manipulationText: {fileID: 0}
   manipulationButtons: []
   pauseMenu: {fileID: 0}
-  pauseButtons: {fileID: 0}
+  pauseButtons: []
   winText: {fileID: 0}
   replayButton: {fileID: 0}
   player: {fileID: 0}
@@ -7783,7 +7776,7 @@ MonoBehaviour:
   manipulationText: {fileID: 0}
   manipulationButtons: []
   pauseMenu: {fileID: 0}
-  pauseButtons: {fileID: 0}
+  pauseButtons: []
   winText: {fileID: 0}
   replayButton: {fileID: 0}
   player: {fileID: 0}
@@ -8271,7 +8264,9 @@ MonoBehaviour:
   - {fileID: 69279939}
   - {fileID: 525434136}
   pauseMenu: {fileID: 558398745}
-  pauseButtons: {fileID: 888115956}
+  pauseButtons:
+  - {fileID: 912323920}
+  - {fileID: 1732636462}
   winText: {fileID: 1779842290}
   replayButton: {fileID: 2018854759}
   player: {fileID: 0}
@@ -8499,7 +8494,7 @@ PrefabInstance:
     - target: {fileID: 5256138823960611979, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 2018854760}
+      objectReference: {fileID: 888115959}
     - target: {fileID: 5256138823960611979, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -8526,6 +8521,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5256138823960611982, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608294158721523343, guid: 40a67fae7720745d5884286ca495741f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608294158721523343, guid: 40a67fae7720745d5884286ca495741f, type: 3}
+      propertyPath: m_Size.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5608294158721523343, guid: 40a67fae7720745d5884286ca495741f, type: 3}
+      propertyPath: m_Center.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5608294159673700488, guid: 40a67fae7720745d5884286ca495741f, type: 3}
@@ -8574,7 +8581,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5608294159673700488, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.526
+      value: -0.015
       objectReference: {fileID: 0}
     - target: {fileID: 5608294159673700488, guid: 40a67fae7720745d5884286ca495741f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8643,35 +8650,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5256138823960611982, guid: 40a67fae7720745d5884286ca495741f, type: 3}
   m_PrefabInstance: {fileID: 2018854758}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2018854760
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2018854759}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b6d01ddb690fb449796902ade8b7f372, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  climbingWall: {fileID: 2679833181238188487}
-  calibrationText: {fileID: 469751136}
-  recalibrateButtons:
-  - {fileID: 1027489382}
-  - {fileID: 433106472}
-  manipulationText: {fileID: 1149684157}
-  manipulationButtons:
-  - {fileID: 311704602}
-  - {fileID: 1970890420}
-  - {fileID: 1019571028}
-  - {fileID: 69279939}
-  - {fileID: 525434136}
-  pauseMenu: {fileID: 558398745}
-  pauseButtons: {fileID: 888115956}
-  winText: {fileID: 1779842290}
-  replayButton: {fileID: 2018854759}
-  player: {fileID: 0}
 --- !u!20 &2031214848 stripped
 Camera:
   m_CorrespondingSourceObject: {fileID: 5370205422972778144, guid: f4820de1a12834a458f3154c8c21e3fc, type: 3}
@@ -32199,7 +32177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6767607207736083271, guid: a8ee23d24fd724eed929db87ab95af29, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.38946
+      value: -14.32
       objectReference: {fileID: 0}
     - target: {fileID: 6767607207736083271, guid: a8ee23d24fd724eed929db87ab95af29, type: 3}
       propertyPath: m_LocalRotation.w

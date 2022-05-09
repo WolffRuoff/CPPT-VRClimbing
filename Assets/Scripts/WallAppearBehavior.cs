@@ -14,7 +14,7 @@ public class WallAppearBehavior : MonoBehaviour
     public GameObject[] manipulationButtons;
 
     public GameObject pauseMenu;
-    public GameObject pauseButtons;
+    public GameObject[] pauseButtons;
 
     public GameObject winText;
     public GameObject replayButton;
@@ -57,7 +57,10 @@ public class WallAppearBehavior : MonoBehaviour
             GlobalBehavior.replay = false;
 
             pauseMenu.SetActive(false);
-            pauseButtons.SetActive(false);
+            foreach (GameObject button in pauseButtons)
+            {
+                button.SetActive(false);
+            }
             winText.SetActive(false);
             replayButton.SetActive(false);
 
@@ -98,7 +101,7 @@ public class WallAppearBehavior : MonoBehaviour
     {
         ChangeManipulateButtons(false);
         manipulationText.SetActive(false);
-
+        
         climbingWall.transform.position = new Vector3(0.0f,5.11f,3.71f);
 
         GlobalBehavior.gameStarted = true;

@@ -7,7 +7,7 @@ public class MenuBehavior : MonoBehaviour
 {
 
     public GameObject pauseMenu;
-    public GameObject pauseButtons;
+    public GameObject[] pauseButtons;
 
     public void StartGameButton(){
         SceneManager.LoadScene("TestScene");
@@ -15,7 +15,10 @@ public class MenuBehavior : MonoBehaviour
 
     public void ResumeGame(){
         pauseMenu.SetActive(false);
-        pauseButtons.SetActive(false);
+        foreach (GameObject button in pauseButtons)
+        {
+            button.SetActive(false);
+        }
         GameObject.FindObjectOfType<RayController>().SetRaying(false);
         // GlobalBehavior.replay = false;
     }
