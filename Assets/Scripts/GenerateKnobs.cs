@@ -83,7 +83,7 @@ public class GenerateKnobs : MonoBehaviour
 
             if (right && randX * GlobalBehavior.rightSpawnPos.x + currentKnob.transform.position.x <= prevPos)
                 randX = randX * -1;
-            else if (!right && randX * GlobalBehavior.leftSpawnPos.x + currentKnob.transform.position.x >= prevPos)
+            else if (!right && currentKnob.transform.position.x - randX * GlobalBehavior.leftSpawnPos.x >= prevPos)
                 randX = randX * -1;
 
             if (i % 3 == 0) {
@@ -98,7 +98,7 @@ public class GenerateKnobs : MonoBehaviour
                 float newX = prevPos + (GlobalBehavior.rightSpawnPos.x * randX);
                 if (newX > 1.3f) {
                     newX = newX - 1f;
-                } else if (newX < -2.7f) {
+                } else if (newX < -2.0f) {
                     newX = newX + 0.5f;
                 }
                 float newY = currentKnob.transform.position.y + GlobalBehavior.rightUpSpawnPos.y * randY;
@@ -113,7 +113,7 @@ public class GenerateKnobs : MonoBehaviour
                 float newX = prevPos - (GlobalBehavior.leftSpawnPos.x * randX);
                 if (newX > 1.3f) {
                     newX = newX - 1f;
-                } else if (newX < -2.7f) {
+                } else if (newX < -2.0f) {
                     newX = newX + 0.5f;
                 }
                 float newY = currentKnob.transform.position.y + GlobalBehavior.leftUpSpawnPos.y * randY;
