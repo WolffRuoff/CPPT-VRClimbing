@@ -1,5 +1,5 @@
 # CPPT-VRClimbing
-Created by Ethan Ruoff (er3074), Namratha Prithviraj (np2788), Arnavi Chheda (amc2476), and Drew Sirenko (ays2130)  <br/>
+Created by Ethan Ruoff (er3074), Namratha Prithviraj (np2788), and Arnavi Chheda (amc2476)  <br/>
 Video URL: https://youtu.be/lWTj3D2fHIQ <br/>
 Date of Submission: _______ <br/>
 
@@ -10,8 +10,8 @@ Date of Submission: _______ <br/>
 - Terrain Tools 3.0.2-Preview.3
 
 ## Compatible Devices:
-- Oculus Quest v______
-- Oculus Quest 2 v______
+- Oculus Quest v39
+- Oculus Quest 2 v39
 
 ## Directory Overview
 ### Assets
@@ -28,19 +28,16 @@ Date of Submission: _______ <br/>
 - QuickOutline: Contains the assets used by the QuickOutline plugin
 - Resources: Contains settings
 - Scenes:
-    - EthanTestScenes: Contains scenes used for testing different features
-    - NamrathaScenes: Contains the actual scenes used in the game
+    - ____________
 - Scripts: Contains all of the scripts we wrote to control different functions in the game
 - Sounds: Contains any sound effects we use
 - TextMesh Pro: Contains the assets TextMeshPro uses
 - XR: Contains functionality for XR gameplay
 
 ## Scene Overview
-### MainMenu
+### StartMenu
 
-### Calibration
-
-### ClimbingWall
+### MainGameScene
 
 ## Instructions for setting up the project
 1. Install the Unity editor 2020.3.33f1
@@ -63,12 +60,12 @@ Date of Submission: _______ <br/>
         - MainTestScene
 
 ## Missing Features
-
+Our project is currently missing the custom wall creation mode and timers.
 ## Known Bugs
 
 ## Asset Sources
 - Knobs used as handgrips: https://drive.google.com/file/d/1gwLXOBAx5IqPFIDcJJIyJSVAgR9GifKX/view
-- Textures for the terrain were provided by Unity
-- Quick Outline
-- Augmented Reality is done via the LIV SDK
+- Textures for the terrain: https://assetstore.unity.com/packages/2d/textures-materials/nature/terrain-textures-pack-free-139542#publisher
+- Quick Outline: https://assetstore.unity.com/packages/tools/particles-effects/quick-outline-115488#publisher
+- Augmented Reality is done via the LIV SDK: https://www.liv.tv/developers
 - Wind sound effect: https://opengameart.org/content/wind-whoosh-loop
