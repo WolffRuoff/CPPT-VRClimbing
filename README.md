@@ -1,6 +1,6 @@
 # CPPT-VRClimbing
 Created by Ethan Ruoff (er3074), Namratha Prithviraj (np2788), Arnavi Chheda (amc2476), and Drew Sirenko (ays2130)  <br/>
-Video URL: _______ <br/>
+Video URL: https://youtu.be/lWTj3D2fHIQ <br/>
 Date of Submission: _______ <br/>
 
 ## Development Platforms: 
@@ -14,6 +14,34 @@ Date of Submission: _______ <br/>
 - Oculus Quest 2 v______
 
 ## Directory Overview
+### Assets
+- ADG_Textures: Contains the textures for the terrain
+- GeneratedAnimations: Animations for different hand poses
+- HandGrabInteractableDataCollection: Metadata of the hand poses for the knobs
+- LIV: The LIV package that allows AR functionality
+- Materials: Materials, textures and shaders
+- Models: 3D models for the wall and knobs
+- Oculus: The Oculus Interaction SDK Package
+- Plugins: Contains the AndroidManifest for building the app
+- Prefabs: Contains all of our prefabs
+- ProBuilder Data: Contains the assets used by the ProBuilder plugin
+- QuickOutline: Contains the assets used by the QuickOutline plugin
+- Resources: Contains settings
+- Scenes:
+    - EthanTestScenes: Contains scenes used for testing different features
+    - NamrathaScenes: Contains the actual scenes used in the game
+- Scripts: Contains all of the scripts we wrote to control different functions in the game
+- Sounds: Contains any sound effects we use
+- TextMesh Pro: Contains the assets TextMeshPro uses
+- XR: Contains functionality for XR gameplay
+
+## Scene Overview
+### MainMenu
+
+### Calibration
+
+### ClimbingWall
+
 ## Instructions for setting up the project
 1. Install the Unity editor 2020.3.33f1
 2. Add this repo as a project in the Unity Hub
