@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class automatically and randomly generates knobs across the wall, as per the level that 
+// the user is choosing to play on (easy, medium, or hard). 
+// It also generates a win button at the end of the climbing path, and generates some danger knobs
+// along the path. 
 public class GenerateKnobs : MonoBehaviour
 {
     public GameObject wall;
@@ -68,7 +72,6 @@ public class GenerateKnobs : MonoBehaviour
 
         GameObject prevKnob = currentKnob;
         float prevPos = prevKnob.transform.position.x;
-        // float prevRight = prevLeft+difficulty*.1f;
 
         while (i <= 15) {
             if (i % 2 == 0) {

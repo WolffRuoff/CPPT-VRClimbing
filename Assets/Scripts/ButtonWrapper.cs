@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class handles the controller <-> hand tracking interactions. The main actions are grabbing, 
+// letting go, selecting (for poses such as thumbs up), and unselecting.
 public class ButtonWrapper : MonoBehaviour
 {
 
@@ -83,6 +85,7 @@ public class ButtonWrapper : MonoBehaviour
 
     public void Selecting(float controller)
     {
+        // The below code handles calibration for the various points (right side, right up, left side, left up)
         if (GlobalBehavior.calibrationMode) {
             if (controller == 1) { 
                 if (!GlobalBehavior.rightHandCalibrationSet) {

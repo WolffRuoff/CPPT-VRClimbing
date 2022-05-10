@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Sets the behavior for when the "Start Calibration" button is clicked
 public class StartCalibrationButton : MonoBehaviour
 {
     public GameObject button;
@@ -11,7 +12,6 @@ public class StartCalibrationButton : MonoBehaviour
         if (GlobalBehavior.calibrationMode == false) {
             GlobalBehavior.calibrationMode = true;
         }
-        //SFindObjectOfType<PointableCanvasModule>().RemovePointerCanvas(button.GetComponentInParent<PointableCanvas>());
         button.gameObject.SetActive(false);
     }
 }

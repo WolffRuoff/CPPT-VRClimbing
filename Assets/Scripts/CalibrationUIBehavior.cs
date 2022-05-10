@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class manages the calibration UI (the various buttons and text associated with calibrating)
 public class CalibrationUIBehavior : MonoBehaviour
 {
     public GameObject calibrationText;

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class triggers the UI to let a user replay the game once the 'win button' has been pressed.
 public class EnableReplay : MonoBehaviour
 {
     public GameObject winText;
