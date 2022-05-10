@@ -1,6 +1,8 @@
 using Oculus.Interaction.Grab;
 using UnityEngine;
 
+// This class handles the special case transformations for the "danger knobs", where as a user
+// places their hand on a danger knob, it recognizes that and destroys the grabbable object i.e. the knob.
 namespace Oculus.Interaction
 {
     public class DangerTransformer : MonoBehaviour, ITransformer
@@ -26,14 +28,6 @@ namespace Oculus.Interaction
             initialHandPos = currentHand.transform.position;
 
             _grabbable.Transform.gameObject.SetActive(false);
-        }
-
-        public void UpdateTransform()
-        {
-
-        }
-
-        public void EndTransform() {
         }
 
         private void SetGrabbingHand()

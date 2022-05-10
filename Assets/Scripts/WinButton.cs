@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+// Handles win button specific behavior
 public class WinButton : MonoBehaviour
 {
 
@@ -45,7 +46,6 @@ public class WinButton : MonoBehaviour
     }
 
     private void Pressed(){
-
         isPressed = true;
         onPressed.Invoke();
 

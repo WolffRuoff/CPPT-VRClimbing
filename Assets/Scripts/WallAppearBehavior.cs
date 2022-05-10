@@ -2,6 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class handles the "customize wall experience" portion of game play, where you
+// are brought to a view of the wall and controls that let you play different levels, change
+// wall knob colors, and enable gameplay.
 public class WallAppearBehavior : MonoBehaviour
 {
     public GameObject climbingWall;
@@ -32,7 +35,8 @@ public class WallAppearBehavior : MonoBehaviour
         ManipulateWall();
     }
 
-    // Update is called once per frame
+    // The main method that resets various global gameplay behaviors and lets you see a distant view of the wall. 
+    // You can then make customizations and start play.
     public void ManipulateWall()
     {
         calibrationText.SetActive(false);
@@ -89,6 +93,7 @@ public class WallAppearBehavior : MonoBehaviour
             obj.SetActive(v);
         }
     }
+
     public void ChangeRecalibrateButtons(bool v)
     {
         foreach (GameObject obj in recalibrateButtons)
@@ -96,6 +101,7 @@ public class WallAppearBehavior : MonoBehaviour
             obj.SetActive(v);
         }
     }
+    
     public void Recalibrate() {
         GlobalBehavior.calibrationMode = true;
         GlobalBehavior.calibrationFinished = false;
@@ -120,7 +126,6 @@ public class WallAppearBehavior : MonoBehaviour
         GlobalBehavior.gameStarted = true;
         Debug.LogWarning("Status of gamestarted: " + GlobalBehavior.gameStarted);
 
-        // laserPointer.SetActive(false);
         GameObject.FindObjectOfType<RayController>().SetRaying(false);
     }
 }

@@ -1,6 +1,9 @@
 using Oculus.Interaction.Grab;
 using UnityEngine;
 
+// This class handles the transformations that occur when climbing the mountain. By interacting with the 
+// grabbable knobs, it determines how to interpret which hand is grabbing, and it also determines the
+// next knob to highlight for wayfinding based on the currently grabbed knob. 
 namespace Oculus.Interaction
 {
     public class ClimbTransformer : MonoBehaviour, ITransformer

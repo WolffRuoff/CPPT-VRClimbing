@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Oculus.Interaction;
 using UnityEngine;
 
+// This class handles controlling the ray behavior
 public class RayController : MonoBehaviour
 {
     bool isRaying;

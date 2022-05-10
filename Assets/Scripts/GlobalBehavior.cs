@@ -2,6 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class handles global static behavior that is read across various scripts in the game.
+// The main components are: calibration points that get set for each hand on the side and above the head;
+// whether the wall is active and the game has started; the list of danger knobs; customizations like colors of the knob;
+// and the ability to replay the game.
 public class GlobalBehavior : MonoBehaviour
 {
     public static bool calibrationMode = false;

@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// This class handles the behavior for the manipulation controls, i.e. the buttons that allow you
+// to customize your gameplay (rotate the wall for the level, set the colors, etc.)
 public class ManipulationButtons : MonoBehaviour
 {
     public GameObject climbingWall;
