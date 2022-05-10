@@ -4,16 +4,15 @@ using UnityEngine;
 
 public class WinBehavior : MonoBehaviour
 {
-
-    public GameObject winText;
-    public GameObject replayButton;
-
     public void WinPressed(){
-
-        winText.SetActive(true);
-        replayButton.SetActive(true);
-        GlobalBehavior.replay = true;
-
-        GameObject.FindObjectOfType<RayController>().SetRaying(true);
+        Debug.LogWarning("Called WinPressed");
+        if (GlobalBehavior.gameStarted) {
+            GlobalBehavior.enableReplay = true;
+            GameObject.FindObjectOfType<RayController>().SetRaying(true);
+        }
+        else
+        {
+            Debug.LogWarning("Gamestarted " + GlobalBehavior.gameStarted);
+        }
     }
 }

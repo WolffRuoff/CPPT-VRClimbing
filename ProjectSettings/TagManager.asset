@@ -9,6 +9,12 @@ TagManager:
   - CalibrationCube
   - HandLaser
   - Knob
+  - RayInteractor
+  - GrabInteractor
+  - LeftKnob
+  - RightKnob
+  - WinButton
+  - DangerKnob
   layers:
   - Default
   - TransparentFX

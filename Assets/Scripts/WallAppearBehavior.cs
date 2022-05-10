@@ -14,15 +14,22 @@ public class WallAppearBehavior : MonoBehaviour
     public GameObject[] manipulationButtons;
 
     public GameObject pauseMenu;
-    public GameObject pauseButtons;
+    public GameObject[] pauseButtons;
 
     public GameObject winText;
     public GameObject replayButton;
 
     public GameObject player;
 
+    private bool restartGame = false;
+
     public void Start(){
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+
+    public void RestartGame() {
+        restartGame = true;
+        ManipulateWall();
     }
 
     // Update is called once per frame
@@ -30,7 +37,7 @@ public class WallAppearBehavior : MonoBehaviour
     {
         calibrationText.SetActive(false);
         ChangeRecalibrateButtons(false);
-        if((!GlobalBehavior.calibrationMode && !GlobalBehavior.wallActive && GlobalBehavior.calibrationFinished)|| GlobalBehavior.replay) {
+        if(restartGame || (!GlobalBehavior.calibrationMode && !GlobalBehavior.wallActive && GlobalBehavior.calibrationFinished) || GlobalBehavior.replay) {
             climbingWall.SetActive(true);
 
             climbingWall.transform.position = new Vector3(0.0f,5.11f,20f);
@@ -47,18 +54,34 @@ public class WallAppearBehavior : MonoBehaviour
                 c.SetActive(false);
             }
 
+            foreach(GameObject knob in GlobalBehavior.dangerKnobs){
+                knob.SetActive(true);
+            }            
+
+            GameObject[] leftKnobs = GameObject.FindGameObjectsWithTag("LeftKnob");
+            GameObject[] rightKnobs = GameObject.FindGameObjectsWithTag("RightKnob");
+            foreach(GameObject knob in leftKnobs){
+                knob.GetComponent<Outline>().enabled=false;
+            }
+            foreach(GameObject knob in rightKnobs){
+                knob.GetComponent<Outline>().enabled=false;
+            }
+
             GlobalBehavior.replay = false;
 
             pauseMenu.SetActive(false);
-            pauseButtons.SetActive(false);
-
+            foreach (GameObject button in pauseButtons)
+            {
+                button.SetActive(false);
+            }
             winText.SetActive(false);
             replayButton.SetActive(false);
 
             player.transform.position = new Vector3(0f, 0f, 0f);
-
+            restartGame = false;
         }
     }
+    
     public void ChangeManipulateButtons(bool v)
     {
         foreach (GameObject obj in manipulationButtons)
@@ -91,10 +114,11 @@ public class WallAppearBehavior : MonoBehaviour
     {
         ChangeManipulateButtons(false);
         manipulationText.SetActive(false);
-
+        
         climbingWall.transform.position = new Vector3(0.0f,5.11f,3.71f);
 
         GlobalBehavior.gameStarted = true;
+        Debug.LogWarning("Status of gamestarted: " + GlobalBehavior.gameStarted);
 
         // laserPointer.SetActive(false);
         GameObject.FindObjectOfType<RayController>().SetRaying(false);

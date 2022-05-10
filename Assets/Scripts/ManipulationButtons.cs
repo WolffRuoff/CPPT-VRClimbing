@@ -61,18 +61,18 @@ public class ManipulationButtons : MonoBehaviour
             color1 = blue;
             color2 = orange;
         }
-        GameObject[] knobs = GameObject.FindGameObjectsWithTag("Knob");
+        GlobalBehavior.leftColor = color1;
+        GlobalBehavior.rightColor = color2;
 
-        foreach(GameObject knob in knobs){
+        GameObject[] leftKnobs = GameObject.FindGameObjectsWithTag("LeftKnob");
+        GameObject[] rightKnobs = GameObject.FindGameObjectsWithTag("RightKnob");
 
-            int color = Random.Range(0,2);
+        foreach(GameObject knob in leftKnobs){
+            knob.GetComponent<MeshRenderer>().sharedMaterial = GlobalBehavior.leftColor;
+        }
 
-            if(color == 0){
-                knob.GetComponent<MeshRenderer>().sharedMaterial = color1;
-            }
-            else if(color == 1){
-                knob.GetComponent<MeshRenderer>().sharedMaterial = color2;
-            }
+        foreach(GameObject knob in rightKnobs){
+            knob.GetComponent<MeshRenderer>().sharedMaterial = GlobalBehavior.rightColor;
         }
     }
 
