@@ -2,6 +2,7 @@
 ![Banner](./Documentation/BannerGIF.gif) <br/>
 Created by Ethan Ruoff (er3074), Namratha Prithviraj (np2788), and Arnavi Chheda (amc2476)  <br/>
 Video URL: https://youtu.be/lWTj3D2fHIQ <br/>
+GitHub Repo URL: https://github.com/WolffRuoff/CPPT-VRClimbing
 Date of Submission: May 10, 2022<br/>
 
 ## Development Platforms: 
@@ -35,6 +36,12 @@ Date of Submission: May 10, 2022<br/>
 - Sounds: Contains any sound effects we use
 - TextMesh Pro: Contains the assets TextMeshPro uses
 - XR: Contains functionality for XR gameplay
+
+### Documentation
+- BannerImage.png: Screenshot of Game
+- WrittenDescription.pdf: Provides instructions on how to play and designs decisions used in creating the game
+- OverviewAndPermission.pdf: Single Paragraph overview with permission to add our names on the website
+- BannerGIF.gif
 
 ## Instructions for setting up the project
 1. Install the Unity editor 2020.3.33f1
