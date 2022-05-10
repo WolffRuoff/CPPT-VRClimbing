@@ -1,5 +1,5 @@
 # CPPT-VRClimbing
-![Banner](./Documentation/BannerImage.png)
+![Banner](./Documentation/BannerGIF.gif) <br/>
 Created by Ethan Ruoff (er3074), Namratha Prithviraj (np2788), and Arnavi Chheda (amc2476)  <br/>
 Video URL: https://youtu.be/lWTj3D2fHIQ <br/>
 Date of Submission: May 10, 2022<br/>
