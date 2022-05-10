@@ -35,7 +35,8 @@ Date of Submission: _______ <br/>
 - XR: Contains functionality for XR gameplay
 
 ## Scene Overview
-### StartMenu
+
+### StartMenuScene
 
 ### MainGameScene
 
