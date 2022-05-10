@@ -30,6 +30,14 @@ namespace Oculus.Interaction
             _grabbable.Transform.gameObject.SetActive(false);
         }
 
+        public void UpdateTransform()
+        {
+
+        }
+
+        public void EndTransform() {
+        }
+
         private void SetGrabbingHand()
         {
             foreach (GameObject hand in GameObject.FindGameObjectsWithTag("GrabInteractor"))
