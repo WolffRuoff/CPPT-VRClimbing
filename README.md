@@ -1,7 +1,9 @@
 # CPPT-VRClimbing
+![Banner](./Documentation/BannerGIF.gif) <br/>
 Created by Ethan Ruoff (er3074), Namratha Prithviraj (np2788), and Arnavi Chheda (amc2476)  <br/>
 Video URL: https://youtu.be/lWTj3D2fHIQ <br/>
-Date of Submission: _______ <br/>
+GitHub Repo URL: https://github.com/WolffRuoff/CPPT-VRClimbing <br/>
+Date of Submission: May 10, 2022<br/>
 
 ## Development Platforms: 
 - Unity 2020.3.33f1
@@ -28,16 +30,18 @@ Date of Submission: _______ <br/>
 - QuickOutline: Contains the assets used by the QuickOutline plugin
 - Resources: Contains settings
 - Scenes:
-    - ____________
+    - StartGameScene
+    - MainGameScene
 - Scripts: Contains all of the scripts we wrote to control different functions in the game
 - Sounds: Contains any sound effects we use
 - TextMesh Pro: Contains the assets TextMeshPro uses
 - XR: Contains functionality for XR gameplay
 
-## Scene Overview
-### StartMenu
-
-### MainGameScene
+### Documentation
+- BannerImage.png: Screenshot of Game
+- WrittenDescription.pdf: Provides instructions on how to play and designs decisions used in creating the game
+- OverviewAndPermission.pdf: Single Paragraph overview with permission to add our names on the website
+- BannerGIF.gif
 
 ## Instructions for setting up the project
 1. Install the Unity editor 2020.3.33f1
@@ -55,13 +59,14 @@ Date of Submission: _______ <br/>
 `private static System.Version _versionZero = new System.Version(0, 0, 0);`<br/>
 
 10. Save and exit the script
-11. Navigate to the following scenes, click on the "OVRCameraRig" object, scroll down to "Quest Features," and change "Hand Tracking Support" to "Controllers and Hands"
-    - Scenes that require step 8:
-        - MainTestScene
+11. Navigate to the both scenes, click on the "OVRCameraRig" object, scroll down to "Quest Features," and change "Hand Tracking Support" to "Controllers and Hands"
 
 ## Missing Features
 Our project is currently missing the custom wall creation mode and timers.
+
 ## Known Bugs
+- During knob generation, if the knobs get to the far edge, it is rare (but possible) for the right and left knobs to cross over.
+- Due to hand-tracking 2.0 it is harder to pinch select. This is due to the Oculus SDK and will hopefully be fixed soon.
 
 ## Asset Sources
 - Knobs used as handgrips: https://drive.google.com/file/d/1gwLXOBAx5IqPFIDcJJIyJSVAgR9GifKX/view
