@@ -2,7 +2,7 @@
 ![Banner](./Documentation/BannerGIF.gif) <br/>
 Created by Ethan Ruoff (er3074), Namratha Prithviraj (np2788), and Arnavi Chheda (amc2476)  <br/>
 Video URL: https://youtu.be/lWTj3D2fHIQ <br/>
-GitHub Repo URL: https://github.com/WolffRuoff/CPPT-VRClimbing
+GitHub Repo URL: https://github.com/WolffRuoff/CPPT-VRClimbing <br/>
 Date of Submission: May 10, 2022<br/>
 
 ## Development Platforms: 
